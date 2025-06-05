@@ -601,4 +601,4 @@ We would like to thank [MinerU](https://github.com/opendatalab/MinerU), [DocLayo
 
 
 ## Copyright
-MonkeyDoc dataset was collected from public datasets, crawled from the internet, and obtained through our own photography. The current technical report only presents the results of the 3B model. If you are interested in larger one, please contact Prof. Yuliang Liu at ylliu@hust.edu.cn.
+MonkeyDoc dataset was collected from public datasets, crawled from the internet, and obtained through our own photography. We plan to make this portion publicly available in the future. The current technical report only presents the results of the 3B model. If you are interested in larger one, please contact Prof. Yuliang Liu at ylliu@hust.edu.cn.
