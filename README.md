@@ -13,7 +13,7 @@ MonkeyOCR: Document Parsing with a Structure-Recognition-Relation Triplet Paradi
 
 > **MonkeyOCR: Document Parsing with a Structure-Recognition-Relation Triplet Paradigm**<br>
 > Zhang Li, Yuliang Liu, Qiang Liu, Zhiyin Ma, Ziyang Zhang, Shuo Zhang, Zidun Guo, Jiarui Zhang, Xinyu Wang, Xiang Bai <br>
-[![arXiv](https://img.shields.io/badge/Arxi-b31b1b.svg?logo=arXiv)](https://github.com/Yuliang-Liu/MonkeyOCR) 
+[![arXiv](https://img.shields.io/badge/Arxiv-b31b1b.svg?logo=arXiv)](https://github.com/Yuliang-Liu/MonkeyOCR) 
 [![Source_code](https://img.shields.io/badge/Code-Available-white)](README.md)
 [![Model Weight](https://img.shields.io/badge/Model_Weight-gray)](https://huggingface.co/echo840/MonkeyOCR)
 [![Demo](https://img.shields.io/badge/Demo-blue)](http://vlrlabmonkey.xyz:7685/)
@@ -134,7 +134,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
       <td>0.292</td>
     </tr>
     <tr>
-      <td>Marker-1.2.3</td>
+      <td>Marker</td>
       <td>0.336</td>
       <td>0.556</td>
       <td>0.080</td>
