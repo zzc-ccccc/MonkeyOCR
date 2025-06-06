@@ -580,7 +580,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 >
 > 1. Upload a PDF or image.
 > 2. Click “Parse (解析)” to let the model perform structure detection, content recognition, and relationship prediction on the input document. The final output will be a markdown-formatted version of the document.
-> 3. Select a prompt and click “Chat (问答)” to let the model perform content recognition on the image based on the selected prompt.
+> 3. Select a prompt and click “Chat (对话)” to let the model perform content recognition on the image based on the selected prompt.
 
 
 
@@ -592,7 +592,19 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 
 ## Citing MonkeyOCR
 
-The paper is coming soon.
+If you wish to refer to the baseline results published here, please use the following BibTeX entries:
+
+```BibTeX
+@misc{li2025monkeyocrdocumentparsingstructurerecognitionrelation,
+      title={MonkeyOCR: Document Parsing with a Structure-Recognition-Relation Triplet Paradigm}, 
+      author={Zhang Li and Yuliang Liu and Qiang Liu and Zhiyin Ma and Ziyang Zhang and Shuo Zhang and Zidun Guo and Jiarui Zhang and Xinyu Wang and Xiang Bai},
+      year={2025},
+      eprint={2506.05218},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2506.05218}, 
+}
+```
 
 
 
