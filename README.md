@@ -3,7 +3,7 @@
 MonkeyOCR: Document Parsing with a Structure-Recognition-Relation Triplet Paradigm
 </h1>
 
-[![arXiv](https://img.shields.io/badge/Arxiv-MonkeyOCR-b31b1b.svg?logo=arXiv)](https://github.com/Yuliang-Liu/MonkeyOCR)
+[![arXiv](https://img.shields.io/badge/Arxiv-MonkeyOCR-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2506.05218)
 [![HuggingFace](https://img.shields.io/badge/HuggingFace%20Weights-black.svg?logo=HuggingFace)](https://huggingface.co/echo840/MonkeyOCR)
 [![GitHub issues](https://img.shields.io/github/issues/Yuliang-Liu/MonkeyOCR?color=critical&label=Issues)](https://github.com/Yuliang-Liu/MonkeyOCR/issues?q=is%3Aopen+is%3Aissue)
 [![GitHub closed issues](https://img.shields.io/github/issues-closed/Yuliang-Liu/MonkeyOCR?color=success&label=Issues)](https://github.com/Yuliang-Liu/MonkeyOCR/issues?q=is%3Aissue+is%3Aclosed)
@@ -13,7 +13,7 @@ MonkeyOCR: Document Parsing with a Structure-Recognition-Relation Triplet Paradi
 
 > **MonkeyOCR: Document Parsing with a Structure-Recognition-Relation Triplet Paradigm**<br>
 > Zhang Li, Yuliang Liu, Qiang Liu, Zhiyin Ma, Ziyang Zhang, Shuo Zhang, Zidun Guo, Jiarui Zhang, Xinyu Wang, Xiang Bai <br>
-[![arXiv](https://img.shields.io/badge/Arxiv-b31b1b.svg?logo=arXiv)](https://github.com/Yuliang-Liu/MonkeyOCR) 
+[![arXiv](https://img.shields.io/badge/Arxiv-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2506.05218) 
 [![Source_code](https://img.shields.io/badge/Code-Available-white)](README.md)
 [![Model Weight](https://img.shields.io/badge/Model_Weight-gray)](https://huggingface.co/echo840/MonkeyOCR)
 [![Demo](https://img.shields.io/badge/Demo-blue)](http://vlrlabmonkey.xyz:7685/)
