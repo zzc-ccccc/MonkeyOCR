@@ -110,8 +110,8 @@ Usage examples:
     
     parser.add_argument(
         "-m", "--model-path",
-        default="/path/to/your/vlm_model",
-        help="Model path (default: /path/to/your/vlm_model)"
+        default="model_weight/Recognition",
+        help="Model path (default: model_weight/Recognition)"
     )
     
     parser.add_argument(
