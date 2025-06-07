@@ -73,7 +73,7 @@ pip install pdf2image==1.17.0
 python demo/demo_gradio.py
 ```
 
-Our 3B model can run efficiently on NVIDIA 3090 GPU.
+Our 3B model can run efficiently on an NVIDIA 3090 GPU.
 
 
 ## Benchmark Results
@@ -576,7 +576,8 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 
 ## Visualization Demo
 
-Demo Link:  http://vlrlabmonkey.xyz:7685
+Get a Quick Hands-On Experience with Our Demo:  http://vlrlabmonkey.xyz:7685
+
 > Our demo is simple and easy to use:
 >
 > 1. Upload a PDF or image.
@@ -614,4 +615,4 @@ We would like to thank [MinerU](https://github.com/opendatalab/MinerU), [DocLayo
 
 
 ## Copyright
-MonkeyDoc dataset was collected from public datasets, crawled from the internet, and obtained through our own photography. The current technical report only presents the results of the 3B model. If you are interested in larger one, please contact Prof. Yuliang Liu at ylliu@hust.edu.cn.
+Please don’t hesitate to share your valuable feedback — it’s a key motivation that drives us to continuously improve our framework. The current technical report only presents the results of the 3B model. If you are interested in larger one, please contact us at xbai@hust.edu.cn or ylliu@hust.edu.cn.
