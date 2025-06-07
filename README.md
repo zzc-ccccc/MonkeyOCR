@@ -73,7 +73,7 @@ pip install pdf2image==1.17.0
 python demo/demo_gradio.py
 ```
 
-Using the [LMDeploy](https://github.com/InternLM/lmdeploy), our model can run efficiently on an NVIDIA 3090 GPU.
+Our model can run efficiently on NVIDIA 3090 GPU.
 
 
 ## Benchmark Results
