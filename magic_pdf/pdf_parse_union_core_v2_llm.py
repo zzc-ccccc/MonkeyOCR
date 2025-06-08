@@ -301,66 +301,6 @@ def txt_spans_extract_v2(pdf_page, spans, all_bboxes, all_discarded_blocks, lang
     return spans
 
 
-def model_init(model_name: str):
-    from transformers import LayoutLMv3ForTokenClassification
-    device = get_device()
-    if torch.cuda.is_available():
-        device = torch.device('cuda')
-        if torch.cuda.is_bf16_supported():
-            supports_bfloat16 = True
-        else:
-            supports_bfloat16 = False
-    elif str(device).startswith("npu"):
-        import torch_npu
-        if torch_npu.npu.is_available():
-            device = torch.device('npu')
-            supports_bfloat16 = False
-        else:
-            device = torch.device('cpu')
-            supports_bfloat16 = False
-    else:
-        device = torch.device('cpu')
-        supports_bfloat16 = False
-
-    if model_name == 'layoutreader':
-
-        layoutreader_model_dir = get_local_layoutreader_model_dir()
-        if os.path.exists(layoutreader_model_dir):
-            model = LayoutLMv3ForTokenClassification.from_pretrained(
-                layoutreader_model_dir
-            )
-        else:
-            logger.warning(
-                'local layoutreader model not exists, use online model from huggingface'
-            )
-            model = LayoutLMv3ForTokenClassification.from_pretrained(
-                'hantian/layoutreader'
-            )
-
-        if supports_bfloat16:
-            model.bfloat16()
-        model.to(device).eval()
-    else:
-        logger.error('model name not allow')
-        exit(1)
-    return model
-
-
-class ModelSingleton:
-    _instance = None
-    _models = {}
-
-    def __new__(cls, *args, **kwargs):
-        if cls._instance is None:
-            cls._instance = super().__new__(cls)
-        return cls._instance
-
-    def get_model(self, model_name: str):
-        if model_name not in self._models:
-            self._models[model_name] = model_init(model_name=model_name)
-        return self._models[model_name]
-
-
 def do_predict(boxes: List[List[int]], model) -> List[int]:
     from magic_pdf.model.sub_modules.reading_oreder.layoutreader.helpers import (
         boxes2inputs, parse_logits, prepare_inputs)
@@ -953,7 +893,7 @@ def pdf_parse_union(
         'pdf_info': pdf_info_list,
     }
 
-    clean_memory(get_device())
+    clean_memory(MonkeyOCR_model.device)
 
     return new_pdf_info_dict
 

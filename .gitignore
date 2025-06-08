@@ -35,7 +35,6 @@ tmp
 ocr_demo
 .coveragerc
 /app/common/__init__.py
-/magic_pdf/config/__init__.py
 source.dev.env
 
 tmp
@@ -52,5 +51,5 @@ _build/
 
 
 output/
-
+build/
 models/
