@@ -583,7 +583,7 @@ Get a Quick Hands-On Experience with Our Demo:  http://vlrlabmonkey.xyz:7685
 >
 > 1. Upload a PDF or image.
 > 2. Click “Parse (解析)” to let the model perform structure detection, content recognition, and relationship prediction on the input document. The final output will be a markdown-formatted version of the document.
-> 3. Select a prompt and click “Chat (对话)” to let the model perform content recognition on the image based on the selected prompt.
+> 3. Select a prompt and click “Test by prompt” to let the model perform content recognition on the image based on the selected prompt.
 
 
 
