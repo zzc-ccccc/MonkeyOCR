@@ -26,21 +26,33 @@ class MonkeyOCR:
         models_dir = self.configs.get(
             'models_dir', os.path.join(root_dir, 'resources', 'models')
         )
+
         logger.info('using models_dir: {}'.format(models_dir))
+        if not os.path.exists(models_dir):
+            raise FileNotFoundError(
+                f"Model directory '{models_dir}' not found. "
+                "Please run 'python download_model.py' to download the required models."
+            )
+        
         self.layout_config = self.configs.get('layout_config')
         self.layout_model_name = self.layout_config.get(
             'model', MODEL_NAME.DocLayout_YOLO
         )
+
+        layout_model_path = os.path.join(models_dir, self.configs['weights'][self.layout_model_name])
+        if not os.path.exists(layout_model_path):
+            raise FileNotFoundError(
+                f"Layout model file not found at '{layout_model_path}'. "
+                "Please run 'python download_model.py' to download the required models."
+            )
+
+
         atom_model_manager = AtomModelSingleton()
         if self.layout_model_name == MODEL_NAME.DocLayout_YOLO:
             self.layout_model = atom_model_manager.get_atom_model(
                 atom_model_name=AtomicModel.Layout,
                 layout_model_name=MODEL_NAME.DocLayout_YOLO,
-                doclayout_yolo_weights=str(
-                    os.path.join(
-                        models_dir, self.configs['weights'][self.layout_model_name]
-                    )
-                ),
+                doclayout_yolo_weights=layout_model_path,
                 device=self.device,
             )
         logger.info(f'layout model loaded: {self.layout_model_name}')
