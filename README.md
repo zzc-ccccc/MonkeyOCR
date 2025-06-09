@@ -15,7 +15,8 @@ MonkeyOCR: Document Parsing with a Structure-Recognition-Relation Triplet Paradi
 > Zhang Li, Yuliang Liu, Qiang Liu, Zhiyin Ma, Ziyang Zhang, Shuo Zhang, Zidun Guo, Jiarui Zhang, Xinyu Wang, Xiang Bai <br>
 [![arXiv](https://img.shields.io/badge/Arxiv-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2506.05218) 
 [![Source_code](https://img.shields.io/badge/Code-Available-white)](README.md)
-[![Model Weight](https://img.shields.io/badge/Model_Weight-gray)](https://huggingface.co/echo840/MonkeyOCR)
+[![Model Weight](https://img.shields.io/badge/HuggingFace-gray)](https://huggingface.co/echo840/MonkeyOCR)
+[![Model Weight](https://img.shields.io/badge/ModelScope-green)](https://modelscope.cn/models/l1731396519/MonkeyOCR)
 [![Demo](https://img.shields.io/badge/Demo-blue)](http://vlrlabmonkey.xyz:7685/)
 
 
@@ -50,11 +51,18 @@ pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https
 pip install .
 ```
 ### 2. Download Model Weights
+Download our model from Huggingface.
 ```python
 pip install huggingface_hub
 
 python download_model.py
+```
+You can also download our model from ModelScope.
 
+```python
+pip install modelscope
+
+python download_model.py -t modelscope
 ```
 ### 3. Inference
 ```bash
