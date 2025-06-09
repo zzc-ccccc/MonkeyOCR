@@ -83,9 +83,14 @@ triton.runtime.errors.OutOfResources: out of resource: shared memory
 
 To work around this issue, we recommend switching the inference backend to **transformers**. Please follow the steps below:
 
-1. Open the `model_configs.yaml` file
-2. Set `chat_config.backend` to `transformers`
-3. Adjust the `batch_size` according to your GPU's memory capacity to ensure stable performance
+1. Install required dependency (if not already installed):
+   ```bash
+   # install flash attention 2, you can download the corresponding version from https://github.com/Dao-AILab/flash-attention/releases/
+   pip install flash-attn==2.7.4.post1 --no-build-isolation
+   ```
+2. Open the `model_configs.yaml` file
+3. Set `chat_config.backend` to `transformers`
+4. Adjust the `batch_size` according to your GPU's memory capacity to ensure stable performance
 
 Example configuration:
 
