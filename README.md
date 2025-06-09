@@ -616,4 +616,4 @@ We would like to thank [MinerU](https://github.com/opendatalab/MinerU), [DocLayo
 
 
 ## Copyright
-Please don’t hesitate to share your valuable feedback — it’s a key motivation that drives us to continuously improve our framework. The current technical report only presents the results of the 3B model. If you are interested in larger one, please contact us at xbai@hust.edu.cn or ylliu@hust.edu.cn.
+Please don’t hesitate to share your valuable feedback — it’s a key motivation that drives us to continuously improve our framework. The current technical report only presents the results of the 3B model. Our model is intended for non-commercial use. If you are interested in larger one, please contact us at xbai@hust.edu.cn or ylliu@hust.edu.cn.
