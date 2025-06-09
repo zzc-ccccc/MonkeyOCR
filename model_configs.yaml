@@ -7,3 +7,7 @@ layout_config:
   model: doclayout_yolo
   reader:
     name: layoutreader
+chat_config:
+  weight_path: model_weight/Recognition
+  backend: lmdeploy # lmdeploy or transformers
+  batch_size: 10 # active when using `transformers` as backend

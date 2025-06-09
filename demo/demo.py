@@ -7,7 +7,7 @@ from magic_pdf.data.dataset import PymuDocDataset, ImageDataset
 from magic_pdf.model.doc_analyze_by_custom_model_llm import doc_analyze_llm
 from magic_pdf.model.custom_model import MonkeyOCR
 
-MonkeyOCR_model = MonkeyOCR('model_weight/Recognition', 'model_configs.yaml')
+MonkeyOCR_model = MonkeyOCR('model_configs.yaml')
 # args
 
 total_time = 0
