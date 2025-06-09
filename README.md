@@ -73,7 +73,7 @@ pip install pdf2image==1.17.0
 # Start demo
 python demo/demo_gradio.py
 ```
-### Change Inference Backend
+### Change Inference Backend for **RTX 3090 / 4090** GPUs (Optional)
 
 Our 3B model can run efficiently on NVIDIA 3090. However, when using **LMDeploy** as the inference backend, you may encounter compatibility issues on **RTX 3090 / 4090** GPUs. Specifically, the following error may occur:
 
