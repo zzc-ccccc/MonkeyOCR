@@ -12,7 +12,7 @@ from magic_pdf.model.doc_analyze_by_custom_model_llm import doc_analyze_llm
 from magic_pdf.model.custom_model import MonkeyOCR
 
 
-def parse_pdf(input_file, output_dir, model_path, config_path):
+def parse_pdf(input_file, output_dir, config_path):
     """
     Parse PDF file and save results
     
@@ -30,7 +30,7 @@ def parse_pdf(input_file, output_dir, model_path, config_path):
     
     # Initialize model
     print("Loading model...")
-    MonkeyOCR_model = MonkeyOCR(model_path, config_path)
+    MonkeyOCR_model = MonkeyOCR(config_path)
     
     # Get filename
     name_without_suff = os.path.basename(input_file).split(".")[0]
@@ -109,12 +109,6 @@ Usage examples:
     )
     
     parser.add_argument(
-        "-m", "--model-path",
-        default="model_weight/Recognition",
-        help="Model path (default: model_weight/Recognition)"
-    )
-    
-    parser.add_argument(
         "-c", "--config",
         default="model_configs.yaml",
         help="Configuration file path (default: model_configs.yaml)"
@@ -126,7 +120,6 @@ Usage examples:
         result_dir = parse_pdf(
             args.input_file,
             args.output,
-            args.model_path,
             args.config
         )
         print(f"\n✅ Parsing completed! Results saved in: {result_dir}")

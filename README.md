@@ -60,10 +60,10 @@ python download_model.py
 ```bash
 # Make sure in MonkeyOCR directory
 python parse.py path/to/your.pdf
-# Specify MonkeyChat path and model configs path
-python parse.py path/to/your.pdf -m model_weight/Recognition -c config.yaml
+# Specify output path and model configs path
+python parse.py path/to/your.pdf -o ./output -c config.yaml
 ```
-### 4. Gradio demo
+### 4. Gradio Demo
 ```bash
 # Prepare your env for gradio
 pip install gradio==5.23.3
@@ -73,8 +73,30 @@ pip install pdf2image==1.17.0
 # Start demo
 python demo/demo_gradio.py
 ```
+### Change Inference Backend
 
-Our 3B model can run efficiently on an NVIDIA 3090 GPU.
+Our 3B model can run efficiently on NVIDIA 3090. However, when using **LMDeploy** as the inference backend, you may encounter compatibility issues on **RTX 3090 / 4090** GPUs. Specifically, the following error may occur:
+
+```
+triton.runtime.errors.OutOfResources: out of resource: shared memory
+```
+
+To work around this issue, we recommend switching the inference backend to **transformers**. Please follow the steps below:
+
+1. Open the `model_configs.yaml` file
+2. Set `chat_config.backend` to `transformers`
+3. Adjust the `batch_size` according to your GPU's memory capacity to ensure stable performance
+
+Example configuration:
+
+```yaml
+chat_config:
+  backend: transformers
+  batch_size: 10  # Adjust based on your available GPU memory
+```
+
+If you manage to resolve the above issue with LMDeploy, you're welcome to open an issue for discussion or submit a pull request (PR) to contribute your fix.
+
 
 
 ## Benchmark Results

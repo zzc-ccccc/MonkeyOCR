@@ -17,7 +17,7 @@ from PIL import Image
 from loguru import logger
 
 if gr.NO_RELOAD:
-    MonkeyOCR_model = MonkeyOCR('model_weight/Recognition', 'model_configs.yaml')
+    MonkeyOCR_model = MonkeyOCR('model_configs.yaml')
 
 def render_latex_table_to_image(latex_content, temp_dir):
     """
@@ -474,4 +474,4 @@ with gr.Blocks(theme="ocean", css=css, title='MonkeyOCR') as demo:
         show_progress=False
     )
 
-demo.queue().launch(server_name="0.0.0.0", server_port=7686, debug=True)
+demo.queue().launch(server_name="0.0.0.0", server_port=7685, debug=True)
