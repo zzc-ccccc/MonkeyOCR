@@ -31,6 +31,7 @@ MonkeyOCR adopts a Structure-Recognition-Relation (SRR) triplet paradigm, which 
 <img src="https://v1.ax1x.com/2025/06/05/7jQ3cm.png" alt="7jQ3cm.png" border="0" />
 
 MonkeyOCR currently does not support photographed documents, but we will continue to improve it in future updates. Stay tuned!
+Currently, our model is deployed on a single GPU, so if too many users upload files at the same time, issues like “This application is currently busy” may occur. We're actively working on supporting Ollama and other deployment solutions to ensure a smoother experience for more users. Additionally, please note that the processing time shown on the demo page does not reflect computation time alone—it also includes result uploading and other overhead. During periods of high traffic, this time may be longer.
 
 ## News 
 * ```2025.06.05 ``` 🚀 We release MonkeyOCR, which supports the parsing of various types of Chinese and English documents.
