@@ -629,8 +629,7 @@ Get a Quick Hands-On Experience with Our Demo:  http://vlrlabmonkey.xyz:7685
   <img src="asserts/Visualization.GIF?raw=true" width="600"/>
 </p>
 
-## Example for formula document
-
+### Example for formula document
 <img src="https://v1.ax1x.com/2025/06/10/7jVLgB.jpg" alt="7jVLgB.jpg" border="0" />
 
 ## Citing MonkeyOCR
