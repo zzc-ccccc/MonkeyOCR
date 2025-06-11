@@ -71,10 +71,10 @@ python download_model.py -t modelscope
 python parse.py path/to/your.pdf
 # Specify output path and model configs path
 python parse.py path/to/your.pdf -o ./output -c config.yaml
-```
+```three
 
 #### Output Results
-MonkeyOCR generates two types of output files:
+MonkeyOCR generates three types of output files:
 
 1. **Processed Markdown File** (`your.md`): The final parsed document content in markdown format, containing text, formulas, tables, and other structured elements.
 2. **Layout Results** (`your_layout.pdf`): The layout results drawed on origin PDF.
