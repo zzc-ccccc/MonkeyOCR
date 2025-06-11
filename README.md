@@ -69,6 +69,8 @@ python download_model.py -t modelscope
 ```bash
 # Make sure in MonkeyOCR directory
 python parse.py path/to/your.pdf
+# or with image as input
+pyhton parse.py path/to/your/image
 # Specify output path and model configs path
 python parse.py path/to/your.pdf -o ./output -c config.yaml
 ```
