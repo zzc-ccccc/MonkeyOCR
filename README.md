@@ -71,7 +71,7 @@ python download_model.py -t modelscope
 python parse.py path/to/your.pdf
 # Specify output path and model configs path
 python parse.py path/to/your.pdf -o ./output -c config.yaml
-```bash
+```
 
 #### Output Results
 MonkeyOCR generates three types of output files:
