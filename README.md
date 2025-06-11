@@ -667,8 +667,12 @@ Get a Quick Hands-On Experience with Our Demo:  http://vlrlabmonkey.xyz:7685
 ### Example for table document
 <img src="https://v1.ax1x.com/2025/06/11/7jcOaa.png" alt="7jcOaa.png" border="0" />
 
+### Example for newspaper
+<img src="https://v1.ax1x.com/2025/06/11/7jcP5V.png" alt="7jcP5V.png" border="0" />
+
 ### Example for financial report
 <img src="https://v1.ax1x.com/2025/06/11/7jc10I.png" alt="7jc10I.png" border="0" />
+<img src="https://v1.ax1x.com/2025/06/11/7jcRCL.png" alt="7jcRCL.png" border="0" />
 
 ## Citing MonkeyOCR
 
