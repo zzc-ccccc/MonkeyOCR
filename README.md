@@ -141,9 +141,6 @@ chat_config:
   batch_size: 10  # Adjust based on your available GPU memory
 ```
 
-If you manage to resolve the above issue with LMDeploy, you're welcome to open an issue for discussion or submit a pull request (PR) to contribute your fix.
-
-
 
 ## Benchmark Results
 
