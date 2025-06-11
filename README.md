@@ -56,14 +56,14 @@ Download our model from Huggingface.
 ```python
 pip install huggingface_hub
 
-python download_model.py
+python tools/download_model.py
 ```
 You can also download our model from ModelScope.
 
 ```python
 pip install modelscope
 
-python download_model.py -t modelscope
+python tools/download_model.py -t modelscope
 ```
 ### 3. Inference
 ```bash
