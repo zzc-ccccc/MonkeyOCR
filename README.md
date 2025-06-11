@@ -650,6 +650,9 @@ Get a Quick Hands-On Experience with Our Demo:  http://vlrlabmonkey.xyz:7685
 ### Example for table document
 <img src="https://v1.ax1x.com/2025/06/11/7jcOaa.png" alt="7jcOaa.png" border="0" />
 
+### Example for financial report
+<img src="https://v1.ax1x.com/2025/06/11/7jc10I.png" alt="7jc10I.png" border="0" />
+
 ## Citing MonkeyOCR
 
 If you wish to refer to the baseline results published here, please use the following BibTeX entries:
