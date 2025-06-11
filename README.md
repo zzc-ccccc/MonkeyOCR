@@ -49,7 +49,7 @@ cd MonkeyOCR
 
 # Install pytorch, see https://pytorch.org/get-started/previous-versions/ for your cuda version
 pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu124 
-pip install .
+pip install -e .
 ```
 ### 2. Download Model Weights
 Download our model from Huggingface.
@@ -72,6 +72,19 @@ python parse.py path/to/your.pdf
 # Specify output path and model configs path
 python parse.py path/to/your.pdf -o ./output -c config.yaml
 ```
+
+#### Output Results
+MonkeyOCR generates two types of output files:
+
+1. **Processed Markdown File** (`your.md`): The final parsed document content in markdown format, containing text, formulas, tables, and other structured elements.
+2. **Layout Results** (`your_layout.pdf`): The layout results drawed on origin PDF.
+2. **Intermediate Block Results** (`your_middle.json`): A JSON file containing detailed information about all detected blocks, including:
+   - Block coordinates and positions
+   - Block content and type information
+   - Relationship information between blocks
+
+These files provide both the final formatted output and detailed intermediate results for further analysis or processing.
+
 ### 4. Gradio Demo
 ```bash
 # Prepare your env for gradio
@@ -580,79 +593,331 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
     <tr>
       <td rowspan="2"><b>Mix</b></td>
       <td>MonkeyOCR-3B <a href="https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/doclayout_yolo_docstructbench_imgsz1280_2501.pt">[Weight]</a></td>
-      <td><b>0.046</b></td>
-      <td>0.120</td>
-      <td><b>0.024</b></td>
-      <td><b>0.100</b></td>
-      <td><b>0.129</b></td>
-      <td><u>0.086</u></td>
-      <td><b>0.024</b></td>
-      <td>0.643</td>
-      <td><b>0.131</b></td>
-      <td><u>0.155</u></td>
+      <td><strong>0.140</strong></td>
+      <td>0.297</td>
+      <td><strong>0.058</strong></td>
+      <td>0.185</td>
+      <td><strong>0.238</strong></td>
+      <td>0.506</td>
+      <td>78.7</td>
+      <td>51.4</td>
+      <td><strong>80.2</strong></td>
+      <td><strong>77.7</strong></td>
+      <td><strong>0.170</strong></td>
+      <td><strong>0.253</strong></td>
+      <td>0.093</td>
+      <td>0.244</td>
     </tr>
     <tr>
       <td>MonkeyOCR-3B* <a href="https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/layout_zh.pt">[Weight]</a></td>
-      <td>0.054</td>
-      <td>0.203</td>
-      <td>0.038</td>
-      <td>0.112</td>
-      <td>0.138</td>
-      <td>0.111</td>
-      <td>0.032</td>
-      <td><u>0.194</u></td>
-      <td><u>0.136</u></td>
-      <td><b>0.120</b></td>
+      <td>0.154</td>
+      <td><strong>0.277</strong></td>
+      <td>0.073</td>
+      <td><strong>0.134</strong></td>
+      <td>0.255</td>
+      <td>0.529</td>
+      <td>78.5</td>
+      <td>50.8</td>
+      <td>78.2</td>
+      <td>76.2</td>
+      <td>0.182</td>
+      <td>0.262</td>
+      <td>0.105</td>
+      <td><strong>0.183</strong></td>
     </tr>
   </tbody>
 </table>
 
-### 3. Comparing MonkeyOCR with closed-source and extra large open-source VLMs.
-<img src="https://v1.ax1x.com/2025/06/05/7jQlj4.png" alt="7jQlj4.png" border="0" />
-
-
-## Visualization Demo
-
-Get a Quick Hands-On Experience with Our Demo:  http://vlrlabmonkey.xyz:7685
-
-> Our demo is simple and easy to use:
->
-> 1. Upload a PDF or image.
-> 2. Click “Parse (解析)” to let the model perform structure detection, content recognition, and relationship prediction on the input document. The final output will be a markdown-formatted version of the document.
-> 3. Select a prompt and click “Test by prompt” to let the model perform content recognition on the image based on the selected prompt.
 
 
 
-### Support diverse Chinese and English PDF types
+### 2. The end-to-end text recognition performance across 9 PDF page types.
+<table style="width: 100%; border-collapse: collapse; text-align: center;">
+  <thead>
+    <tr style="border-bottom: 2px solid #000;">
+      <th><b>Model Type</b></th>
+      <th><b>Models</b></th>
+      <th><b>Book</b></th>
+      <th><b>Slides</b></th>
+      <th><b>Financial Report</b></th>
+      <th><b>Textbook</b></th>
+      <th><b>Exam Paper</b></th>
+      <th><b>Magazine</b></th>
+      <th><b>Academic Papers</b></th>
+      <th><b>Notes</b></th>
+      <th><b>Newspaper</b></th>
+      <th><b>Overall</b></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3"><b>Pipeline Tools</b></td>
+      <td>MinerU</td>
+      <td><u>0.055</u></td>
+      <td>0.124</td>
+      <td><u>0.033</u></td>
+      <td><u>0.102</u></td>
+      <td><u>0.159</u></td>
+      <td><b>0.072</b></td>
+      <td><u>0.025</u></td>
+      <td>0.984</td>
+      <td>0.171</td>
+      <td>0.206</td>
+    </tr>
+    <tr>
+      <td>Marker</td>
+      <td>0.074</td>
+      <td>0.340</td>
+      <td>0.089</td>
+      <td>0.319</td>
+      <td>0.452</td>
+      <td>0.153</td>
+      <td>0.059</td>
+      <td>0.651</td>
+      <td>0.192</td>
+      <td>0.274</td>
+    </tr>
+    <tr>
+      <td>Mathpix</td>
+      <td>0.131</td>
+      <td>0.220</td>
+      <td>0.202</td>
+      <td>0.216</td>
+      <td>0.278</td>
+      <td>0.147</td>
+      <td>0.091</td>
+      <td>0.634</td>
+      <td>0.690</td>
+      <td>0.300</td>
+    </tr>
+    <tr>
+      <td rowspan="2"><b>Expert VLMs</b></td>
+      <td>GOT-OCR</td>
+      <td>0.111</td>
+      <td>0.222</td>
+      <td>0.067</td>
+      <td>0.132</td>
+      <td>0.204</td>
+      <td>0.198</td>
+      <td>0.179</td>
+      <td>0.388</td>
+      <td>0.771</td>
+      <td>0.267</td>
+    </tr>
+    <tr>
+      <td>Nougat</td>
+      <td>0.734</td>
+      <td>0.958</td>
+      <td>1.000</td>
+      <td>0.820</td>
+      <td>0.930</td>
+      <td>0.830</td>
+      <td>0.214</td>
+      <td>0.991</td>
+      <td>0.871</td>
+      <td>0.806</td>
+    </tr>
+    <tr>
+      <td rowspan="3"><b>General VLMs</b></td>
+      <td>GPT4o</td>
+      <td>0.157</td>
+      <td>0.163</td>
+      <td>0.348</td>
+      <td>0.187</td>
+      <td>0.281</td>
+      <td>0.173</td>
+      <td>0.146</td>
+      <td>0.607</td>
+      <td>0.751</td>
+      <td>0.316</td>
+    </tr>
+    <tr>
+      <td>Qwen2.5-VL-7B</td>
+      <td>0.148</td>
+      <td><b>0.053</b></td>
+      <td>0.111</td>
+      <td>0.137</td>
+      <td>0.189</td>
+      <td>0.117</td>
+      <td>0.134</td>
+      <td>0.204</td>
+      <td>0.706</td>
+      <td>0.205</td>
+    </tr>
+    <tr>
+      <td>InternVL3-8B</td>
+      <td>0.163</td>
+      <td><u>0.056</u></td>
+      <td>0.107</td>
+      <td>0.109</td>
+      <td><b>0.129</b></td>
+      <td>0.100</td>
+      <td>0.159</td>
+      <td><b>0.150</b></td>
+      <td>0.681</td>
+      <td>0.188</td>
+    </tr>
+    <tr>
+      <td rowspan="2"><b>Mix</b></td>
+      <td>MonkeyOCR-3B <a href="https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/doclayout_yolo_docstructbench_imgsz1280_2501.pt">[Weight]</a></td>
+      <td><strong>0.140</strong></td>
+      <td>0.297</td>
+      <td><strong>0.058</strong></td>
+      <td>0.185</td>
+      <td><strong>0.238</strong></td>
+      <td>0.506</td>
+      <td>78.7</td>
+      <td>51.4</td>
+      <td><strong>80.2</strong></td>
+      <td><strong>77.7</strong></td>
+      <td><strong>0.170</strong></td>
+      <td><strong>0.253</strong></td>
+      <td>0.093</td>
+      <td>0.244</td>
+    </tr>
+    <tr>
+      <td>MonkeyOCR-3B* <a href="https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/layout_zh.pt">[Weight]</a></td>
+      <td>0.154</td>
+      <td><strong>0.277</strong></td>
+      <td>0.073</td>
+      <td><strong>0.134</strong></td>
+      <td>0.255</td>
+      <td>0.529</td>
+      <td>78.5</td>
+      <td>50.8</td>
+      <td>78.2</td>
+      <td>76.2</td>
+      <td>0.182</td>
+      <td>0.262</td>
+      <td>0.105</td>
+      <td><strong>0.183</strong></td>
+    </tr>
+  </tbody>
+</table>
 
-<p align="center">
-  <img src="asserts/Visualization.GIF?raw=true" width="600"/>
-</p>
-
-### Example for formula document
-<img src="https://v1.ax1x.com/2025/06/10/7jVLgB.jpg" alt="7jVLgB.jpg" border="0" />
-
-## Citing MonkeyOCR
-
-If you wish to refer to the baseline results published here, please use the following BibTeX entries:
-
-```BibTeX
-@misc{li2025monkeyocrdocumentparsingstructurerecognitionrelation,
-      title={MonkeyOCR: Document Parsing with a Structure-Recognition-Relation Triplet Paradigm}, 
-      author={Zhang Li and Yuliang Liu and Qiang Liu and Zhiyin Ma and Ziyang Zhang and Shuo Zhang and Zidun Guo and Jiarui Zhang and Xinyu Wang and Xiang Bai},
-      year={2025},
-      eprint={2506.05218},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2506.05218}, 
-}
-```
 
 
 
-## Acknowledgments
-We would like to thank [MinerU](https://github.com/opendatalab/MinerU), [DocLayout-YOLO](https://github.com/opendatalab/DocLayout-YOLO), [PyMuPDF](https://github.com/pymupdf/PyMuPDF), [layoutreader](https://github.com/ppaanngggg/layoutreader), [Qwen2.5-VL](https://github.com/QwenLM/Qwen2.5-VL), [LMDeploy](https://github.com/InternLM/lmdeploy), and [InternVL3](https://github.com/OpenGVLab/InternVL) for providing base code and models, as well as their contributions to this field. We also thank [M6Doc](https://github.com/HCIILAB/M6Doc), [DocLayNet](https://github.com/DS4SD/DocLayNet), [CDLA](https://github.com/buptlihang/CDLA), [D4LA](https://github.com/AlibabaResearch/AdvancedLiterateMachinery), [DocGenome](https://github.com/Alpha-Innovator/DocGenome), [PubTabNet](https://github.com/ibm-aur-nlp/PubTabNet), and [UniMER-1M](https://github.com/opendatalab/UniMERNet) for providing valuable datasets.
-
-
-## Copyright
-Please don’t hesitate to share your valuable feedback — it’s a key motivation that drives us to continuously improve our framework. The current technical report only presents the results of the 3B model. Our model is intended for non-commercial use. If you are interested in larger one, please contact us at xbai@hust.edu.cn or ylliu@hust.edu.cn.
+### 2. The end-to-end text recognition performance across 9 PDF page types.
+<table style="width: 100%; border-collapse: collapse; text-align: center;">
+  <thead>
+    <tr style="border-bottom: 2px solid #000;">
+      <th><b>Model Type</b></th>
+      <th><b>Models</b></th>
+      <th><b>Book</b></th>
+      <th><b>Slides</b></th>
+      <th><b>Financial Report</b></th>
+      <th><b>Textbook</b></th>
+      <th><b>Exam Paper</b></th>
+      <th><b>Magazine</b></th>
+      <th><b>Academic Papers</b></th>
+      <th><b>Notes</b></th>
+      <th><b>Newspaper</b></th>
+      <th><b>Overall</b></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3"><b>Pipeline Tools</b></td>
+      <td>MinerU</td>
+      <td><u>0.055</u></td>
+      <td>0.124</td>
+      <td><u>0.033</u></td>
+      <td><u>0.102</u></td>
+      <td><u>0.159</u></td>
+      <td><b>0.072</b></td>
+      <td><u>0.025</u></td>
+      <td>0.984</td>
+      <td>0.171</td>
+      <td>0.206</td>
+    </tr>
+    <tr>
+      <td>Marker</td>
+      <td>0.074</td>
+      <td>0.340</td>
+      <td>0.089</td>
+      <td>0.319</td>
+      <td>0.452</td>
+      <td>0.153</td>
+      <td>0.059</td>
+      <td>0.651</td>
+      <td>0.192</td>
+      <td>0.274</td>
+    </tr>
+    <tr>
+      <td>Mathpix</td>
+      <td>0.131</td>
+      <td>0.220</td>
+      <td>0.202</td>
+      <td>0.216</td>
+      <td>0.278</td>
+      <td>0.147</td>
+      <td>0.091</td>
+      <td>0.634</td>
+      <td>0.690</td>
+      <td>0.300</td>
+    </tr>
+    <tr>
+      <td rowspan="2"><b>Expert VLMs</b></td>
+      <td>GOT-OCR</td>
+      <td>0.111</td>
+      <td>0.222</td>
+      <td>0.067</td>
+      <td>0.132</td>
+      <td>0.204</td>
+      <td>0.198</td>
+      <td>0.179</td>
+      <td>0.388</td>
+      <td>0.771</td>
+      <td>0.267</td>
+    </tr>
+    <tr>
+      <td>Nougat</td>
+      <td>0.734</td>
+      <td>0.958</td>
+      <td>1.000</td>
+      <td>0.820</td>
+      <td>0.930</td>
+      <td>0.830</td>
+      <td>0.214</td>
+      <td>0.991</td>
+      <td>0.871</td>
+      <td>0.806</td>
+    </tr>
+    <tr>
+      <td rowspan="3"><b>General VLMs</b></td>
+      <td>GPT4o</td>
+      <td>0.157</td>
+      <td>0.163</td>
+      <td>0.348</td>
+      <td>0.187</td>
+      <td>0.281</td>
+      <td>0.173</td>
+      <td>0.146</td>
+      <td>0.607</td>
+      <td>0.751</td>
+      <td>0.316</td>
+    </tr>
+    <tr>
+      <td>Qwen2.5-VL-7B</td>
+      <td>0.148</td>
+      <td><b>0.053</b></td>
+      <td>0.111</td>
+      <td>0.137</td>
+      <td>0.189</td>
+      <td>0.117</td>
+      <td>0.134</td>
+      <td>0.204</td>
+      <td>0.706</td>
+      <td>0.205</td>
+    </tr>
+    <tr>
+      <td>InternVL3-8B</td>
+      <td>0.163</td>
+      <td><u>0.056</u></td>
+      <td>0.107</td>
+      <td>0.109</td>
+      <td><b>0.129</b></td>
+      <td>0.100</td>
+      <td>0.159</td>
+      <td><b>0.150</b></td>
