@@ -79,7 +79,7 @@ pyhton parse.py path/to/your/image
 python parse.py path/to/your.pdf -o ./output -c config.yaml
 ```
 
-## 💡 Gentle Reminder
+#### 💡 Gentle Reminder
 
 For Chinese scenarios or cases where text, tables, etc., are recognized as images, you can try using the following structure detection model:  
 [layout_zh.pt](https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/layout_zh.pt)
