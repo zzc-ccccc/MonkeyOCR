@@ -34,7 +34,7 @@ MonkeyOCR currently does not support photographed documents, but we will continu
 Currently, our model is deployed on a single GPU, so if too many users upload files at the same time, issues like “This application is currently busy” may occur. We're actively working on supporting Ollama and other deployment solutions to ensure a smoother experience for more users. Additionally, please note that the processing time shown on the demo page does not reflect computation time alone—it also includes result uploading and other overhead. During periods of high traffic, this time may be longer. The inference speeds of MonkeyOCR, MinerU, and Qwen2.5 VL-7B were measured on an H800 GPU.
 
 
-## ⚠️⚠️ Attention ❗️❗️❗️
+## 💡 Tips
 
 For Chinese scenarios or cases where text, tables, etc., are recognized as images, you can try using the following structure detection model:  
 [layout_zh.pt](https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/layout_zh.pt)
