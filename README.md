@@ -141,6 +141,8 @@ python tools/lmdeploy_patcher.py patch
 python tools/lmdeploy_patcher.py restore
 ```
 
+After our tests on **NVIDIA RTX 3090**, the inference speed was **0.338** pages per second when using **lmdeploy** as the inference backend after applying lmdeploy_patcher, while it was **0.015** pages per second when using **transformers** as the inference backend.
+
 **Special thanks to [@pineking](https://github.com/pineking) for the solution!**
 
 ### Switch inference backend (Optional)
