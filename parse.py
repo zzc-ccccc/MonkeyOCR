@@ -20,14 +20,95 @@ TASK_INSTRUCTIONS = {
     'table': 'Please output the table in the image in LaTeX format.'
 }
 
-def single_task_recognition(input_file, output_dir, config_path, task):
+def parse_folder(folder_path, output_dir, config_path, task=None):
+    """
+    Parse all PDF and image files in a folder
+    
+    Args:
+        folder_path: Input folder path
+        output_dir: Output directory
+        config_path: Configuration file path
+        task: Optional task type for single task recognition
+    """
+    print(f"Starting to parse folder: {folder_path}")
+    
+    # Check if folder exists
+    if not os.path.exists(folder_path):
+        raise FileNotFoundError(f"Folder does not exist: {folder_path}")
+    
+    if not os.path.isdir(folder_path):
+        raise ValueError(f"Path is not a directory: {folder_path}")
+    
+    # Find all supported files
+    supported_extensions = {'.pdf', '.jpg', '.jpeg', '.png'}
+    files_to_process = []
+    
+    for root, dirs, files in os.walk(folder_path):
+        for file in files:
+            file_path = os.path.join(root, file)
+            file_ext = os.path.splitext(file)[1].lower()
+            if file_ext in supported_extensions:
+                files_to_process.append(file_path)
+    
+    files_to_process.sort()  # Sort for consistent processing order
+    
+    if not files_to_process:
+        print("No supported files found in the folder.")
+        return
+    
+    print(f"Found {len(files_to_process)} files to process:")
+    for file_path in files_to_process:
+        print(f"  - {file_path}")
+    
+    # Initialize model once for all files
+    print("Loading model...")
+    MonkeyOCR_model = MonkeyOCR(config_path)
+    
+    # Process each file
+    successful_files = []
+    failed_files = []
+    
+    for i, file_path in enumerate(files_to_process, 1):
+        print(f"\n{'='*60}")
+        print(f"Processing file {i}/{len(files_to_process)}: {os.path.basename(file_path)}")
+        print(f"{'='*60}")
+        
+        try:
+            if task:
+                result_dir = single_task_recognition(file_path, output_dir, MonkeyOCR_model, task)
+            else:
+                result_dir = parse_pdf(file_path, output_dir, MonkeyOCR_model)
+            
+            successful_files.append(file_path)
+            print(f"✅ Successfully processed: {os.path.basename(file_path)}")
+            
+        except Exception as e:
+            failed_files.append((file_path, str(e)))
+            print(f"❌ Failed to process {os.path.basename(file_path)}: {str(e)}")
+    
+    # Summary
+    print(f"\n{'='*60}")
+    print("PROCESSING SUMMARY")
+    print(f"{'='*60}")
+    print(f"Total files: {len(files_to_process)}")
+    print(f"Successful: {len(successful_files)}")
+    print(f"Failed: {len(failed_files)}")
+    
+    if failed_files:
+        print("\nFailed files:")
+        for file_path, error in failed_files:
+            print(f"  - {os.path.basename(file_path)}: {error}")
+    
+    return output_dir
+
+def single_task_recognition(input_file, output_dir, MonkeyOCR_model, task):
     """
     Single task recognition for specific content type
     
     Args:
         input_file: Input file path
         output_dir: Output directory
-        config_path: Configuration file path
+        MonkeyOCR_model: Pre-initialized model instance
         task: Task type ('text', 'formula', 'table')
     """
     print(f"Starting single task recognition: {task}")
@@ -36,10 +117,6 @@ def single_task_recognition(input_file, output_dir, config_path, task):
     # Check if input file exists
     if not os.path.exists(input_file):
         raise FileNotFoundError(f"Input file does not exist: {input_file}")
-    
-    # Initialize model
-    print("Loading model...")
-    MonkeyOCR_model = MonkeyOCR(config_path)
     
     # Get filename
     name_without_suff = os.path.basename(input_file).split(".")[0]
@@ -114,29 +191,20 @@ def single_task_recognition(input_file, output_dir, config_path, task):
     except Exception as e:
         raise RuntimeError(f"Single task recognition failed: {str(e)}")
 
-def parse_pdf(input_file, output_dir, config_path, task=None):
+def parse_pdf(input_file, output_dir, MonkeyOCR_model):
     """
-    Parse PDF file and save results, or perform single task recognition
+    Parse PDF file and save results
     
     Args:
         input_file: Input PDF file path
         output_dir: Output directory
-        config_path: Configuration file path
-        task: Optional task type for single task recognition
+        MonkeyOCR_model: Pre-initialized model instance
     """
-    # If task is specified, use single task recognition
-    if task:
-        return single_task_recognition(input_file, output_dir, config_path, task)
-    
     print(f"Starting to parse file: {input_file}")
     
     # Check if input file exists
     if not os.path.exists(input_file):
         raise FileNotFoundError(f"Input file does not exist: {input_file}")
-    
-    # Initialize model
-    print("Loading model...")
-    MonkeyOCR_model = MonkeyOCR(config_path)
     
     # Get filename
     name_without_suff = os.path.basename(input_file).split(".")[0]
@@ -197,9 +265,11 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Usage examples:
-  python parse.py input.pdf
-  python parse.py input.pdf -o ./output
-  python parse.py input.pdf -m /path/to/model -c model_configs.yaml
+  python parse.py input.pdf                  # Parse single PDF file
+  python parse.py input.pdf -o ./output      # Parse single PDF with custom output dir
+  python parse.py /path/to/folder            # Parse all files in folder
+  python parse.py /path/to/folder -t text    # Single task recognition for all files in folder
+  python parse.py input.pdf -c model_configs.yaml
   python parse.py image.jpg -t text          # Single task: text recognition
   python parse.py image.jpg -t formula       # Single task: formula recognition  
   python parse.py image.jpg -t table         # Single task: table recognition
@@ -208,8 +278,8 @@ Usage examples:
     )
     
     parser.add_argument(
-        "input_file",
-        help="Input PDF/image file path"
+        "input_path",
+        help="Input PDF/image file path or folder path"
     )
     
     parser.add_argument(
@@ -233,17 +303,42 @@ Usage examples:
     args = parser.parse_args()
     
     try:
-        result_dir = parse_pdf(
-            args.input_file,
-            args.output,
-            args.config,
-            args.task
-        )
-        
-        if args.task:
-            print(f"\n✅ Single task ({args.task}) recognition completed! Results saved in: {result_dir}")
+        # Check if input path is a directory or file
+        if os.path.isdir(args.input_path):
+            # Process folder
+            result_dir = parse_folder(
+                args.input_path,
+                args.output,
+                args.config,
+                args.task
+            )
+            
+            if args.task:
+                print(f"\n✅ Folder processing with single task ({args.task}) recognition completed! Results saved in: {result_dir}")
+            else:
+                print(f"\n✅ Folder processing completed! Results saved in: {result_dir}")
+        elif os.path.isfile(args.input_path):
+            # Process single file - initialize model for single file processing
+            print("Loading model...")
+            MonkeyOCR_model = MonkeyOCR(args.config)
+            
+            if args.task:
+                result_dir = single_task_recognition(
+                    args.input_path,
+                    args.output,
+                    MonkeyOCR_model,
+                    args.task
+                )
+                print(f"\n✅ Single task ({args.task}) recognition completed! Results saved in: {result_dir}")
+            else:
+                result_dir = parse_pdf(
+                    args.input_path,
+                    args.output,
+                    MonkeyOCR_model
+                )
+                print(f"\n✅ Parsing completed! Results saved in: {result_dir}")
         else:
-            print(f"\n✅ Parsing completed! Results saved in: {result_dir}")
+            raise FileNotFoundError(f"Input path does not exist: {args.input_path}")
         
     except Exception as e:
         print(f"\n❌ Processing failed: {str(e)}", file=sys.stderr)

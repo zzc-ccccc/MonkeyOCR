@@ -70,14 +70,18 @@ pip install modelscope
 python tools/download_model.py -t modelscope
 ```
 ### 3. Inference
+You can parse a file or a directory containing PDFs or images using the following commands:
 ```bash
-# Make sure in MonkeyOCR directory
-# End to end parsing
-python parse.py path/to/pdf_or_image
-# Single task recognition (only output markdown)
-python parse.py path/to/pdf_or_image -t text/formula/table
-# Specify output path and model configs path
-python parse.py path/to/your.pdf -o ./output -c config.yaml
+# Make sure you are in the MonkeyOCR directory
+
+# End-to-end parsing
+python parse.py input_path
+
+# Single-task recognition (outputs markdown only)
+python parse.py input_path -t text/formula/table
+
+# Specify output directory and model config file
+python parse.py input_path -o ./output -c config.yaml
 ```
 
 #### 💡 Gentle Reminder
