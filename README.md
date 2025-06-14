@@ -82,8 +82,8 @@ python parse.py path/to/your.pdf -o ./output -c config.yaml
 
 #### 💡 Gentle Reminder
 
-For Chinese scenarios or cases where text, tables, etc., are recognized as images, you can try using the following structure detection model:  
-[layout_zh.pt](https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/layout_zh.pt)
+For Chinese scenarios, or cases where text, tables, etc. are mistakenly recognized as images, you can try using the following structure detection model: [layout\_zh.pt](https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/layout_zh.pt).
+(If the model is not found in `model_weight/Structure/`, you can download it manually.)
 
 To use this model, update the configuration file as follows:  
 In [`model_configs.yaml`](https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/model_configs.yaml#L3), replace:  
