@@ -73,7 +73,7 @@ python tools/download_model.py -t modelscope
 You can parse a file or a directory containing PDFs or images using the following commands:
 ```bash
 # Make sure you are in the MonkeyOCR directory
-
+# Replace input_path with the path to a PDF or image or directory
 # End-to-end parsing
 python parse.py input_path
 
