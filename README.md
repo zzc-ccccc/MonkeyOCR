@@ -35,6 +35,10 @@ Currently, our model is deployed on a single GPU, so if too many users upload fi
 
 
 
+Thanks to [Fahd Mirza](https://www.youtube.com/watch?v=3YYeuP48LqQ) for providing guidance on running MonkeyOCR. However, it's important to note that the GPU memory usage of MonkeyOCR depends on the available memory at runtime — the more free memory there is, the more memory MonkeyOCR will utilize.
+
+
+
 
 ## News 
 * ```2025.06.12 ``` 🚀 The model’s trending on [Hugging Face](https://huggingface.co/models?sort=trending). Thanks for the love!
