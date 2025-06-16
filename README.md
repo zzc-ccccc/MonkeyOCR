@@ -7,6 +7,7 @@ MonkeyOCR: Document Parsing with a Structure-Recognition-Relation Triplet Paradi
 [![HuggingFace](https://img.shields.io/badge/HuggingFace%20Weights-black.svg?logo=HuggingFace)](https://huggingface.co/echo840/MonkeyOCR)
 [![GitHub issues](https://img.shields.io/github/issues/Yuliang-Liu/MonkeyOCR?color=critical&label=Issues)](https://github.com/Yuliang-Liu/MonkeyOCR/issues?q=is%3Aopen+is%3Aissue)
 [![GitHub closed issues](https://img.shields.io/github/issues-closed/Yuliang-Liu/MonkeyOCR?color=success&label=Issues)](https://github.com/Yuliang-Liu/MonkeyOCR/issues?q=is%3Aissue+is%3Aclosed)
+[![License](https://img.shields.io/badge/License-Apache%202.0-yellow)](https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/LICENSE.txt)
 [![GitHub views](https://komarev.com/ghpvc/?username=Yuliang-Liu&repo=MonkeyOCR&color=brightgreen&label=Views)](https://github.com/Yuliang-Liu/MonkeyOCR)
 </div>
 
@@ -32,13 +33,6 @@ MonkeyOCR adopts a Structure-Recognition-Relation (SRR) triplet paradigm, which 
 
 MonkeyOCR currently does not support photographed documents, but we will continue to improve it in future updates. Stay tuned!
 Currently, our model is deployed on a single GPU, so if too many users upload files at the same time, issues like “This application is currently busy” may occur. We're actively working on supporting Ollama and other deployment solutions to ensure a smoother experience for more users. Additionally, please note that the processing time shown on the demo page does not reflect computation time alone—it also includes result uploading and other overhead. During periods of high traffic, this time may be longer. The inference speeds of MonkeyOCR, MinerU, and Qwen2.5 VL-7B were measured on an H800 GPU.
-
-
-
-Thanks to [Fahd Mirza](https://www.youtube.com/watch?v=3YYeuP48LqQ) for providing guidance on running MonkeyOCR. A gentle note: the GPU memory usage of MonkeyOCR depends on the available memory at runtime — the more free memory there is, the more memory MonkeyOCR will utilize.
-
-
-
 
 ## News 
 * ```2025.06.12 ``` 🚀 The model’s trending on [Hugging Face](https://huggingface.co/models?sort=trending). Thanks for the love!
@@ -764,6 +758,11 @@ If you wish to refer to the baseline results published here, please use the foll
 ## Acknowledgments
 We would like to thank [MinerU](https://github.com/opendatalab/MinerU), [DocLayout-YOLO](https://github.com/opendatalab/DocLayout-YOLO), [PyMuPDF](https://github.com/pymupdf/PyMuPDF), [layoutreader](https://github.com/ppaanngggg/layoutreader), [Qwen2.5-VL](https://github.com/QwenLM/Qwen2.5-VL), [LMDeploy](https://github.com/InternLM/lmdeploy), and [InternVL3](https://github.com/OpenGVLab/InternVL) for providing base code and models, as well as their contributions to this field. We also thank [M6Doc](https://github.com/HCIILAB/M6Doc), [DocLayNet](https://github.com/DS4SD/DocLayNet), [CDLA](https://github.com/buptlihang/CDLA), [D4LA](https://github.com/AlibabaResearch/AdvancedLiterateMachinery), [DocGenome](https://github.com/Alpha-Innovator/DocGenome), [PubTabNet](https://github.com/ibm-aur-nlp/PubTabNet), and [UniMER-1M](https://github.com/opendatalab/UniMERNet) for providing valuable datasets.
 
+Thanks to [Fahd Mirza](https://www.youtube.com/watch?v=3YYeuP48LqQ), for providing guidance on running MonkeyOCR. A gentle note: the GPU memory usage of MonkeyOCR depends on the available memory at runtime — the more free memory there is, the more memory MonkeyOCR will utilize. [![youtube](https://img.shields.io/badge/-YouTube-000000?logo=youtube&logoColor=FF0000)](https://www.youtube.com/watch?v=3YYeuP48LqQ)
+
+Thanks to [神奇的提示词](https://mp.weixin.qq.com/s/79_9Lu8Gf5GyPlpD4s-SOg) for providing helpful insights on document parsing. [![shenqidetishici](https://img.shields.io/badge/-WeChat@神奇的提示词-000000?logo=wechat&logoColor=07C160)](https://mp.weixin.qq.com/s/79_9Lu8Gf5GyPlpD4s-SOg)
+
+We also thank everyone who contributed to this open-source effort.
 
 ## Copyright
 Please don’t hesitate to share your valuable feedback — it’s a key motivation that drives us to continuously improve our framework. The current technical report only presents the results of the 3B model. Our model is intended for non-commercial use. If you are interested in larger one, please contact us at xbai@hust.edu.cn or ylliu@hust.edu.cn.
