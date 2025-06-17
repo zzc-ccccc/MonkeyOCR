@@ -1,14 +1,11 @@
 import os
 import torch
 from magic_pdf.config.constants import *
-from lmdeploy import pipeline, GenerationConfig, PytorchEngineConfig, ChatTemplateConfig
-from lmdeploy.vl import load_image
 from magic_pdf.model.sub_modules.model_init import AtomModelSingleton
 from magic_pdf.model.model_list import AtomicModel
 from transformers import LayoutLMv3ForTokenClassification
 from loguru import logger
 import yaml
-from transformers import Qwen2_5_VLForConditionalGeneration, AutoProcessor
 from qwen_vl_utils import process_vision_info
 from PIL import Image
 import requests
@@ -93,6 +90,9 @@ class MonkeyOCR:
         if chat_backend == 'lmdeploy':
             logger.info('Use LMDeploy as backend')
             self.chat_model = MonkeyChat_LMDeploy(chat_path)
+        elif chat_backend == 'vllm':
+            logger.info('Use vLLM as backend')
+            self.chat_model = MonkeyChat_vLLM(chat_path)
         elif chat_backend == 'transformers':
             logger.info('Use transformers as backend')
             batch_size = self.chat_config.get('batch_size', 5)
@@ -104,12 +104,18 @@ class MonkeyOCR:
 
 class MonkeyChat_LMDeploy:
     def __init__(self, model_path, engine_config=None): 
+        try:
+            from lmdeploy import pipeline, GenerationConfig, PytorchEngineConfig, ChatTemplateConfig
+        except ImportError:
+            raise ImportError("LMDeploy is not installed. Please install it following: "
+                              "https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/docs/install_cuda.md "
+                              "to use MonkeyChat_LMDeploy.")
         self.model_name = os.path.basename(model_path)
-        self.engine_config = self.auto_config_dtype(engine_config)
+        self.engine_config = self._auto_config_dtype(engine_config, PytorchEngineConfig)
         self.pipe = pipeline(model_path, backend_config=self.engine_config, chat_template_config=ChatTemplateConfig('qwen2d5-vl'))
         self.gen_config=GenerationConfig(max_new_tokens=4096,do_sample=True,temperature=0,repetition_penalty=1.05)
 
-    def auto_config_dtype(self, engine_config=None):
+    def _auto_config_dtype(self, engine_config=None, PytorchEngineConfig=None):
         if engine_config is None:
             engine_config = PytorchEngineConfig(session_len=10240)
         dtype = "bfloat16"
@@ -125,12 +131,56 @@ class MonkeyChat_LMDeploy:
         return engine_config
     
     def batch_inference(self, images, questions):
+        from lmdeploy.vl import load_image
         inputs = [(question, load_image(image)) for image, question in zip(images, questions)]
         outputs = self.pipe(inputs, gen_config=self.gen_config)
         return [output.text for output in outputs]
+    
+class MonkeyChat_vLLM:
+    def __init__(self, model_path):
+        try:
+            from vllm import LLM, SamplingParams
+        except ImportError:
+            raise ImportError("vLLM is not installed. Please install it following: "
+                              "https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/docs/install_cuda.md "
+                               "to use MonkeyChat_vLLM.")
+        self.model_name = os.path.basename(model_path)
+        self.pipe = LLM(model=model_path,
+                        max_seq_len_to_capture=10240,
+                        mm_processor_kwargs={'use_fast': True},
+                        gpu_memory_utilization=self._auto_gpu_mem_ratio(0.9))
+        self.gen_config = SamplingParams(max_tokens=4096,temperature=0,repetition_penalty=1.05)
+    
+    def _auto_gpu_mem_ratio(self, ratio):
+        mem_free, mem_total = torch.cuda.mem_get_info()
+        ratio = ratio * mem_free / mem_total
+        return ratio
+
+    def batch_inference(self, images, questions):
+        placeholder = "<|image_pad|>"
+        prompts = [
+            ("<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n"
+            f"<|im_start|>user\n<|vision_start|>{placeholder}<|vision_end|>"
+            f"{question}<|im_end|>\n"
+            "<|im_start|>assistant\n") for question in questions
+        ]
+        inputs = [{
+            "prompt": prompts[i],
+            "multi_modal_data": {
+                "image": images[i],
+            }
+        } for i in range(len(prompts))]
+        outputs = self.pipe.generate(inputs, sampling_params=self.gen_config)
+        return [o.outputs[0].text for o in outputs]
 
 class MonkeyChat_transformers:
     def __init__(self, model_path: str, max_batch_size: int = 10, max_new_tokens=4096, device: str = None):
+        try:
+            from transformers import Qwen2_5_VLForConditionalGeneration, AutoProcessor
+        except ImportError:
+            raise ImportError("transformers is not installed. Please install it following: "
+                              "https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/docs/install_cuda.md "
+                              "to use MonkeyChat_transformers.")
         self.model_name = os.path.basename(model_path)
         self.max_batch_size = max_batch_size
         self.max_new_tokens = max_new_tokens
