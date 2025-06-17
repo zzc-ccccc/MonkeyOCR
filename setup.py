@@ -24,18 +24,18 @@ if __name__ == '__main__':
               'README.md').open(encoding='utf-8') as file:
         long_description = file.read()
     setup(
-        name="magic_pdf",  # 项目名
-        version=__version__,  # 自动从tag中获取版本号
-        packages=find_packages() + ["magic_pdf.resources"],  # 包含所有的包
+        name="magic_pdf",
+        version=__version__,
+        packages=find_packages() + ["magic_pdf.resources"],
         package_data={
-            "magic_pdf.resources": ["**"],  # 包含magic_pdf.resources目录下的所有文件
+            "magic_pdf.resources": ["**"],
         },
-        install_requires=parse_requirements('requirements.txt'),  # 项目依赖的第三方库
-        description="MonkeyOCR: Document Parsing with a Structure-Recognition-Relation Triplet Paradigm",  # 简短描述
-        long_description=long_description,  # 详细描述
-        long_description_content_type="text/markdown",  # 如果README是Markdown格式
+        install_requires=parse_requirements('requirements.txt'),
+        description="MonkeyOCR: Document Parsing with a Structure-Recognition-Relation Triplet Paradigm",
+        long_description=long_description,
+        long_description_content_type="text/markdown",
         url="https://github.com/Yuliang-Liu/MonkeyOCR",
-        python_requires=">=3.9",  # 项目依赖的 Python 版本
-        include_package_data=True,  # 是否包含非代码文件，如数据文件、配置文件等
-        zip_safe=False,  # 是否使用 zip 文件格式打包，一般设为 False
+        python_requires=">=3.9",
+        include_package_data=True,
+        zip_safe=False,
     )
