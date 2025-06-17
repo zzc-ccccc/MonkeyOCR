@@ -696,13 +696,16 @@ If you wish to refer to the baseline results published here, please use the foll
 
 
 ## Acknowledgments
-We would like to thank [MinerU](https://github.com/opendatalab/MinerU), [DocLayout-YOLO](https://github.com/opendatalab/DocLayout-YOLO), [PyMuPDF](https://github.com/pymupdf/PyMuPDF), [layoutreader](https://github.com/ppaanngggg/layoutreader), [Qwen2.5-VL](https://github.com/QwenLM/Qwen2.5-VL), [LMDeploy](https://github.com/InternLM/lmdeploy), and [InternVL3](https://github.com/OpenGVLab/InternVL) for providing base code and models, as well as their contributions to this field. We also thank [M6Doc](https://github.com/HCIILAB/M6Doc), [DocLayNet](https://github.com/DS4SD/DocLayNet), [CDLA](https://github.com/buptlihang/CDLA), [D4LA](https://github.com/AlibabaResearch/AdvancedLiterateMachinery), [DocGenome](https://github.com/Alpha-Innovator/DocGenome), [PubTabNet](https://github.com/ibm-aur-nlp/PubTabNet), and [UniMER-1M](https://github.com/opendatalab/UniMERNet) for providing valuable datasets.
+We would like to thank [MinerU](https://github.com/opendatalab/MinerU), [DocLayout-YOLO](https://github.com/opendatalab/DocLayout-YOLO), [PyMuPDF](https://github.com/pymupdf/PyMuPDF), [layoutreader](https://github.com/ppaanngggg/layoutreader), [Qwen2.5-VL](https://github.com/QwenLM/Qwen2.5-VL), [LMDeploy](https://github.com/InternLM/lmdeploy), and [InternVL3](https://github.com/OpenGVLab/InternVL) for providing base code and models, as well as their contributions to this field. We also thank [M6Doc](https://github.com/HCIILAB/M6Doc), [DocLayNet](https://github.com/DS4SD/DocLayNet), [CDLA](https://github.com/buptlihang/CDLA), [D4LA](https://github.com/AlibabaResearch/AdvancedLiterateMachinery), [DocGenome](https://github.com/Alpha-Innovator/DocGenome), [PubTabNet](https://github.com/ibm-aur-nlp/PubTabNet), and [UniMER-1M](https://github.com/opendatalab/UniMERNet) for providing valuable datasets. We also thank everyone who contributed to this open-source effort.
 
-Thanks to [Fahd Mirza](https://www.youtube.com/watch?v=3YYeuP48LqQ), for providing guidance on running MonkeyOCR. A gentle note: the GPU memory usage of MonkeyOCR depends on the available memory at runtime — the more free memory there is, the more memory MonkeyOCR will utilize. [![youtube](https://img.shields.io/badge/-YouTube-000000?logo=youtube&logoColor=FF0000)](https://www.youtube.com/watch?v=3YYeuP48LqQ)
+## Alternative Models to Explore
+If you find that our model doesn’t fully meet your needs, feel free to try out the following two recently released awesome models:
 
-Thanks to [神奇的提示词](https://mp.weixin.qq.com/s/79_9Lu8Gf5GyPlpD4s-SOg) for providing helpful insights on document parsing. [![shenqidetishici](https://img.shields.io/badge/-WeChat@神奇的提示词-000000?logo=wechat&logoColor=07C160)](https://mp.weixin.qq.com/s/79_9Lu8Gf5GyPlpD4s-SOg)
+[PP-StructureV3](https://github.com/PaddlePaddle/PaddleOCR)
 
-We also thank everyone who contributed to this open-source effort.
+[MinerU 2.0](https://github.com/opendatalab/mineru)
+
+
 
 ## Copyright
 Please don’t hesitate to share your valuable feedback — it’s a key motivation that drives us to continuously improve our framework. The current technical report only presents the results of the 3B model. Our model is intended for non-commercial use. If you are interested in larger one, please contact us at xbai@hust.edu.cn or ylliu@hust.edu.cn.
