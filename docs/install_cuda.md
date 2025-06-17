@@ -1,6 +1,6 @@
 # Install with CUDA Support
 
-This guide walks you through setting up the environment for **MonkeyOCR** with CUDA support. You can choose **one** of the backends — **LMDeploy**, **vLLM**, or **transformers** — to install and use. It covers installation instructions for each of them.
+This guide walks you through setting up the environment for **MonkeyOCR** with CUDA support. You can choose **one** of the backends — [**LMDeploy**](https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/docs/install_cuda.md#using-lmdeploy-as-the-inference-backend-optional)(recomended), [**vLLM**](https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/docs/install_cuda.md#using-vllm-as-the-inference-backend-optional), or [**transformers**](https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/docs/install_cuda.md#using-transformers-as-the-inference-backend-optional) — to install and use. It covers installation instructions for each of them.
 
 > **Note:** Based on our internal test, inference speed ranking is: **LMDeploy ≥ vLLM >>> transformers**
 
@@ -98,7 +98,7 @@ chat_config:
 
 ---
 
-### Using **transformers** as the Inference Backend (Optional)
+## Using **transformers** as the Inference Backend (Optional)
 > **Supporting CUDA 12.4/12.1**
 ```bash
 conda create -n MonkeyOCR python=3.10
