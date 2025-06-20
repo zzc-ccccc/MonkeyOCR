@@ -28,7 +28,7 @@
     ```
     This is because your installed version of LMDeploy is not yet compatible with Qwen2.5VL. You need to install the latest development version from the GitHub repository.
     ```bash
-    pip install git+[https://github.com/InternLM/lmdeploy.git](https://github.com/InternLM/lmdeploy.git)
+    pip install git+https://github.com/InternLM/lmdeploy.git
     ```
     After the installation is complete, try quantizing again.
 
