@@ -18,6 +18,7 @@ MonkeyOCR: Document Parsing with a Structure-Recognition-Relation Triplet Paradi
 [![Source_code](https://img.shields.io/badge/Code-Available-white)](README.md)
 [![Model Weight](https://img.shields.io/badge/HuggingFace-gray)](https://huggingface.co/echo840/MonkeyOCR)
 [![Model Weight](https://img.shields.io/badge/ModelScope-green)](https://modelscope.cn/models/l1731396519/MonkeyOCR)
+[![Public Courses](https://img.shields.io/badge/Openbayes-yellow)](https://openbayes.com/console/public/tutorials/91ESrGvEvBq)
 [![Demo](https://img.shields.io/badge/Demo-blue)](http://vlrlabmonkey.xyz:7685/)
 
 
