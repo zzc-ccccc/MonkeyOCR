@@ -43,7 +43,7 @@ Currently, our model is deployed on a single GPU, so if too many users upload fi
 # Quick Start
 ## Locally Install
 ### 1. Install MonkeyOCR
-See the [installation guide](https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/docs/install_cuda.md) to set up your environment.
+See the [installation guide](https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/docs/install_cuda.md#install-with-cuda-support) to set up your environment.
 ### 2. Download Model Weights
 Download our model from Huggingface.
 ```python
@@ -73,23 +73,16 @@ python parse.py input_path -t text/formula/table
 python parse.py input_path -o ./output -c config.yaml
 ```
 
-#### 💡 Gentle Reminder
-
-For Chinese scenarios, or cases where text, tables, etc. are mistakenly recognized as images, you can try using the following structure detection model: [layout\_zh.pt](https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/layout_zh.pt).
-(If the model is not found in `model_weight/Structure/`, you can download it manually.)
-
-To use this model, update the configuration file as follows:  
-In [`model_configs.yaml`](https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/model_configs.yaml#L3), replace:  
-
-```yaml
-Structure/doclayout_yolo_docstructbench_imgsz1280_2501.pt
-```
-
-with:  
-
-```yaml
-Structure/layout_zh.pt
-```
+> [!TIP]
+> 
+> For Chinese scenarios, or cases where text, tables, etc. are mistakenly recognized as images, you can try using the following structure detection model: [layout\_zh.pt](https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/layout_zh.pt).
+> (If the model is not found in `model_weight/Structure/`, you can download it manually.)
+> 
+> To use this model, update the configuration file [`model_configs.yaml`](https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/model_configs.yaml#L3) as follows:  
+> 
+> ```yaml
+> doclayout_yolo: Structure/layout_zh.pt
+> ```
 
 #### Output Results
 MonkeyOCR generates three types of output files:
@@ -108,6 +101,13 @@ These files provide both the final formatted output and detailed intermediate re
 # Start demo
 python demo/demo_gradio.py
 ```
+
+### 5. Fast API
+You can start the MonkeyOCR FastAPI service with the following command:
+```bash
+uvicorn api.main:app --port 8000
+```
+Once the API service is running, you can access the API documentation at http://localhost:8000/docs to explore available endpoints.
 
 ## Docker Deployment
 
