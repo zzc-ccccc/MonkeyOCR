@@ -44,30 +44,30 @@ pip install -e .
 pip install https://github.com/InternLM/lmdeploy/releases/download/v0.8.0/lmdeploy-0.8.0+cu118-cp310-cp310-manylinux2014_x86_64.whl --extra-index-url https://download.pytorch.org/whl/cu118
 ```
 
-### Fixing the **Shared Memory Error** on **RTX 3090 / 4090 / ...** GPUs (Optional)
-
-Our 3B model runs smoothly on the NVIDIA RTX 3090. However, when using **LMDeploy** as the inference backend, you might run into compatibility issues on **RTX 3090 / 4090** GPUs — typically this error:
-
-```
-triton.runtime.errors.OutOfResources: out of resource: shared memory
-```
-
-To resolve this issue, apply the following patch:
-
-```bash
-python tools/lmdeploy_patcher.py patch
-```
-
-> ⚠️ **Note:** This command modifies LMDeploy’s source code in your environment.
+> [!IMPORTANT]
+> ### Fixing the **Shared Memory Error** on **RTX 3090 / 4090 / ...** GPUs (Optional)
+> 
+> Our 3B model runs smoothly on the NVIDIA RTX 3090. However, when using **LMDeploy** as the inference backend, you might run into compatibility issues on **RTX 3090 / 4090** GPUs — typically this error:
+> 
+> ```
+> triton.runtime.errors.OutOfResources: out of resource: shared memory
+> ```
+> 
+> To resolve this issue, apply the following patch:
+> 
+> ```bash
+> python tools/lmdeploy_patcher.py patch
+> ```
+> **Note:** This command modifies LMDeploy’s source code in your environment.
 > To undo the changes, simply run:
-
-```bash
-python tools/lmdeploy_patcher.py restore
-```
-
-Based on our tests on the **NVIDIA RTX 3090**, inference speed was **0.338 pages/second** using **LMDeploy** (with the patch applied), compared to only **0.015 pages/second** using **transformers**.
-
-**Special thanks to [@pineking](https://github.com/pineking) for the solution!**
+> 
+> ```bash
+> python tools/lmdeploy_patcher.py restore
+> ```
+> 
+> Based on our tests on the **NVIDIA RTX 3090**, inference speed was **0.338 pages/second** using **LMDeploy** (with the patch applied), compared to only **0.015 pages/second** using **transformers**.
+> 
+> **Special thanks to [@pineking](https://github.com/pineking) for the solution!**
 
 ---
 
