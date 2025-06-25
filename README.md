@@ -130,11 +130,13 @@ Once the API service is running, you can access the API documentation at http://
    docker compose build monkeyocr
    ```
 
-   > **Note:** If your GPU is from the 30-series, 40-series, or similar, build the patched image for LMDeploy compatibility:
-
-   ```bash
-   docker compose build monkeyocr-fix
-   ```
+> [!WARNING]
+> 
+> If your GPU is from the 30-series, 40-series, or similar, build the patched image for LMDeploy compatibility:
+> 
+> ```bash
+> docker compose build monkeyocr-fix
+> ```
 
 4. Run the container with the Gradio demo (accessible on port 7860):
 
