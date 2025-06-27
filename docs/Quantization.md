@@ -15,6 +15,7 @@
         --w-bits 4 \
         --w-group-size 128 \
         --batch-size 1 \
+        --revision Qwen2_5_VLForConditionalGeneration \
         --work-dir ./monkeyocr_quantization
     ```
     Wait for the quantization to complete.
