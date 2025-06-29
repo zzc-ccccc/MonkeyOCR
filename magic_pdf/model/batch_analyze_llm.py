@@ -2,11 +2,7 @@ import base64
 import copy
 import time
 
-import cv2
-import numpy as np
-import torch
 from loguru import logger
-from PIL import Image
 
 from magic_pdf.config.constants import MODEL_NAME
 from io import BytesIO
