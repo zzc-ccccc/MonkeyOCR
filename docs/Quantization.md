@@ -29,8 +29,15 @@
     ```    
     The relative location of calibrte.py is in **lmdeploy/lite/apis/calibrate.py**
 
-
-
+    Or you can download [tools/fix_qwen2_5_vl_awq.py](https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/tools/fix_qwen2_5_vl_awq.py)
+    Run in your environment:
+    ```bash
+    python tools/fix_qwen2_5_vl_awq.py patch
+    ```
+    **Note**: This command modifies LMDeploy’s source code in your environment. To undo the changes, simply run:
+    ```bash
+    python tools/fix_qwen2_5_vl_awq.py restore
+    ```
     
 3.  Enter the following in the terminal.
     ```bash
