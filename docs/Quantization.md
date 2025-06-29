@@ -4,8 +4,35 @@
     ```bash
     pip install datasets
     ```
+2.  If you directly proceed to the third step, you may encounter the following problems:
+    ```bash
+    RuntimeError: Currently, quantification and calibration of Qwen2_5_VLTextModel are not supported.
+    The supported model types are InternLMForCausalLM, InternLM2ForCausalLM, InternLM3ForCausalLM, QWenLMHeadModel, Qwen2ForCausalLM, Qwen3ForCausalLM, BaiChuanForCausalLM, BaichuanForCausalLM, LlamaForCausalLM, LlavaLlamaForCausalLM,MGMLlamaForCausalLM, InternLMXComposer2ForCausalLM, Phi3ForCausalLM, ChatGLMForConditionalGeneration, MixtralForCausalLM, Qwen2VLForConditionalGeneration, Qwen2_5_VLForConditionalGeneration, MistralForCausalLM.
+    ```
+    This is because in the calibrte.py file of the lmdeploy library, the following code (lines 255-258) replaces `model` with `vl_model.language_model`, causing `model_type` to become `Qwen2_5_VLTextModel` instead of the supported `Qwen2_5_VLForConditionalGeneration`:
+    ```
+    if hasattr(vl_model, 'language_model'):  # deepseek-vl, ...
+        model = vl_model.language_model
+    if hasattr(vl_model, 'llm'):  # MiniCPMV, ...
+        model = vl_model.llm
+    ```
+    Find these codes and comment out these lines:
+    ```
+    # if hasattr(vl_model, 'language_model'):  # deepseek-vl, ...
+    #     model = vl_model.language_model
+    # if hasattr(vl_model, 'llm'):  # MiniCPMV, ...
+    #     model = vl_model.llm
+    ```    
+    You can use the following command to view the directory of the **lmdeploy** library:
+    ```bash    
+    python -c "import lmdeploy; import os; print(os.path.dirname(lmdeploy.__file__))"
+    ```    
+    The relative location of calibrte.py is in **lmdeploy/lite/apis/calibrate.py**
 
-2.  Enter the following in the terminal.
+
+
+    
+3.  Enter the following in the terminal.
     ```bash
     lmdeploy lite auto_awq \
         ./model_weight/Recognition \
@@ -15,14 +42,13 @@
         --w-bits 4 \
         --w-group-size 128 \
         --batch-size 1 \
-        --revision Qwen2_5_VLForConditionalGeneration \
         --work-dir ./monkeyocr_quantization
     ```
     Wait for the quantization to complete.
     * If the quantization process is killed, you need to check if you have sufficient memory.
     * For reference, the maximum VRAM usage for quantization with these parameters is approximately 6.47GB.
 
-3.  You might encounter the following error:
+4.  You might encounter the following error:
     ```
     RuntimeError: Error(s) in loading state_dict for Linear:
         size mismatch for bias: copying a param with shape torch.Size([2048]) from checkpoint, the shape in current model is torch.Size([1280]).
@@ -33,7 +59,7 @@
     ```
     After the installation is complete, try quantizing again.
 
-4.  After quantization is complete, replace the `Recognition` folder.
+5.  After quantization is complete, replace the `Recognition` folder.
     ```bash
     mv model_weight/Recognition Recognition_backup
 
