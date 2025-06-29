@@ -30,6 +30,7 @@
     The relative location of calibrte.py is in **lmdeploy/lite/apis/calibrate.py**
 
     Or you can download [tools/fix_qwen2_5_vl_awq.py](https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/tools/fix_qwen2_5_vl_awq.py)
+
     Run in your environment:
     ```bash
     python tools/fix_qwen2_5_vl_awq.py patch
@@ -39,7 +40,7 @@
     python tools/fix_qwen2_5_vl_awq.py restore
     ```
     
-3.  Enter the following in the terminal.
+4.  Enter the following in the terminal.
     ```bash
     lmdeploy lite auto_awq \
         ./model_weight/Recognition \
@@ -55,7 +56,7 @@
     * If the quantization process is killed, you need to check if you have sufficient memory.
     * For reference, the maximum VRAM usage for quantization with these parameters is approximately 6.47GB.
 
-4.  You might encounter the following error:
+5.  You might encounter the following error:
     ```
     RuntimeError: Error(s) in loading state_dict for Linear:
         size mismatch for bias: copying a param with shape torch.Size([2048]) from checkpoint, the shape in current model is torch.Size([1280]).
@@ -66,7 +67,7 @@
     ```
     After the installation is complete, try quantizing again.
 
-5.  After quantization is complete, replace the `Recognition` folder.
+6.  After quantization is complete, replace the `Recognition` folder.
     ```bash
     mv model_weight/Recognition Recognition_backup
 
