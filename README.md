@@ -72,6 +72,9 @@ python parse.py input_path -t text/formula/table
 # Specify output directory and model config file
 python parse.py input_path -o ./output -c config.yaml
 
+# Parse images in input_path(a dir) in groups with specific group size
+python parse.py input_path -g 20
+
 # Parse a PDF and split results by pages
 python parse.py your.pdf -s
 ```
