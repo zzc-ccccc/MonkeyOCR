@@ -16,7 +16,7 @@ from magic_pdf.model.custom_model import MonkeyOCR
 TASK_INSTRUCTIONS = {
     'text': 'Please output the text content from the image.',
     'formula': 'Please write out the expression of the formula in the image using LaTeX format.',
-    'table': 'Please output the table in the image in LaTeX format.'
+    'table': 'This is the image of a table. Please output the table in html format.'
 }
 
 def parse_folder(folder_path, output_dir, config_path, task=None, group_size=None):
