@@ -162,6 +162,7 @@ Once the API service is running, you can access the API documentation at http://
    ```bash
    docker compose up monkeyocr-api
    ```
+   Once the API service is running, you can access the API documentation at http://localhost:7861/docs to explore available endpoints.
 
 ## Windows Support 
     
