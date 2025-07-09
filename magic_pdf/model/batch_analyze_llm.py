@@ -10,7 +10,7 @@ from PIL import Image
 from magic_pdf.model.sub_modules.model_utils import (
     clean_vram, crop_img)
 
-YOLO_LAYOUT_BASE_BATCH_SIZE = 1
+YOLO_LAYOUT_BASE_BATCH_SIZE = 8
 
 class BatchAnalyzeLLM:
     def __init__(self, model):
@@ -169,23 +169,12 @@ class BatchAnalyzeLLM:
         return images_layout_res
 
     def batch_llm_ocr(self, images, cat_ids, version='lmdeploy'):
-        import re
         def sanitize_md(output):
-            cleaned = re.match(r'<md>.*</md>', output, flags=re.DOTALL)
-            if cleaned is None:
-                return output.replace('<md>', '').replace('</md>', '').replace('md\n','').strip()
-            return f"{cleaned[0].replace('<md>', '').replace('</md>', '').strip()}"
-        def sanitize_mf(output):
-            cleaned = re.match(r'\$\$.*\$\$', output, flags=re.DOTALL)
-            if cleaned is None:
-                return output.replace('$$', '').strip()
-            return f"{cleaned[0].replace('$$', '').strip()}"
+            return output.replace('<md>', '').replace('</md>', '').replace('md\n','').strip()
+        def sanitize_mf(output:str):
+            return output.replace('$$', '').strip('$').strip()
         def sanitize_html(output):
-            # cleaned = re.match(r'<html>.*</html>', output, flags=re.DOTALL)
-            cleaned = re.match(r'```html.*```', output, flags=re.DOTALL)
-            if cleaned is None:
-                return '<html>\n'+output.replace('```html','<html>').replace('```','</html>').strip()+'\n</html>'
-            return f"{cleaned[0].replace('```html','<html>').replace('```','</html>').strip()}"
+            return output.replace('```html','').replace('```','').replace('<html>','').replace('</html>','').strip()
         assert len(images) == len(cat_ids)
         instruction = f'''Please output the text content from the image.'''
         instruction_mf = f'''Please write out the expression of the formula in the image using LaTeX format.'''
