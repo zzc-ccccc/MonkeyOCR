@@ -211,8 +211,8 @@ Once the API service is running, you can access the API documentation at http://
    Once the API service is running, you can access the API documentation at http://localhost:7861/docs to explore available endpoints.
 
 ## Windows Support 
-    
-For deployment on Windows, please use WSL and Docker Desktop. See the [Windows Support](docs/windows_support.md) Guide for details.
+
+See the [Windows Support](docs/windows_support.md) Guide for details.
 
 ## Quantization
 
