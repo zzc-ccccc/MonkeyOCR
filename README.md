@@ -30,7 +30,7 @@ MonkeyOCR adopts a Structure-Recognition-Relation (SRR) triplet paradigm, which 
 2. Compared to end-to-end models, our 3B-parameter model achieves the best average performance on English documents, outperforming models such as Gemini 2.5 Pro and Qwen2.5 VL-72B.
 3. For multi-page document parsing, our method reaches a processing speed of 0.84 pages per second, surpassing MinerU (0.65) and Qwen2.5 VL-7B (0.12).
 
-<img src="https://zimgs.com/i/Eq75ce" alt="7jQ3cm.png" border="0" />
+<img src="https://v1.ax1x.com/2025/07/10/Eq75ce.png" alt="ominidocbench1" border="0">
 
 MonkeyOCR currently does not support photographed documents, but we will continue to improve it in future updates. Stay tuned!
 Currently, our model is deployed on a single GPU, so if too many users upload files at the same time, issues like “This application is currently busy” may occur. We're actively working on supporting Ollama and other deployment solutions to ensure a smoother experience for more users. Additionally, please note that the processing time shown on the demo page does not reflect computation time alone—it also includes result uploading and other overhead. During periods of high traffic, this time may be longer. The inference speeds of MonkeyOCR, MinerU, and Qwen2.5 VL-7B were measured on an H800 GPU.
