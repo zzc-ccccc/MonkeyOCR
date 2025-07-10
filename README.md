@@ -573,7 +573,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.185</td>
 </tr>
 <tr>
-<td><strong>MonkeyOCR-1.2B-0709 <a href="http://vlrlabmonkey.xyz:7685/">[https://huggingface.co/echo840/MonkeyOCR-1.2B-0709]</a></strong></td>
+<td><strong>MonkeyOCR-1.2B-0709 <a href="https://huggingface.co/echo840/MonkeyOCR-1.2B-0709">[Weight]</a></strong></td>
 <td>0.153</td>
 <td>0.223</td>
 <td>0.066</td>
@@ -746,7 +746,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.155</td>
 </tr>
 <tr>
-<td><strong>MonkeyOCR-3B*-0605 <a href="https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/layout_zh.pt"></strong></td>
+<td><strong>MonkeyOCR-3B*-0605 <a href="https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/layout_zh.pt">[Weight]</a></strong></td>
 <td><u>0.054</u></td>
 <td>0.203</td>
 <td>0.038</td>
@@ -759,7 +759,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.120</td>
 </tr>
 <tr>
-<td><strong>MonkeyOCR-3B-0709 <a href="http://vlrlabmonkey.xyz:7685/">[Demo]</strong></td>
+<td><strong>MonkeyOCR-3B-0709 <a href="http://vlrlabmonkey.xyz:7685/">[Demo]</a></strong></td>
 <td>0.084</td>
 <td>0.129</td>
 <td>0.060</td>
@@ -772,7 +772,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td><strong>0.100</strong></td>
 </tr>
 <tr>
-<td><strong>MonkeyOCR-1.2B-0709 <a href="http://vlrlabmonkey.xyz:7685/">[https://huggingface.co/echo840/MonkeyOCR-1.2B-0709]</a></strong></td>
+<td><strong>MonkeyOCR-1.2B-0709 <a href="https://huggingface.co/echo840/MonkeyOCR-1.2B-0709">[Weight]</a></strong></td>
 <td>0.087</td>
 <td>0.142</td>
 <td>0.059</td>
@@ -962,7 +962,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>75.5 ± 1.0</td>
 </tr>
 <tr>
-<td>MonkeyOCR-3B-0709 <a href="http://vlrlabmonkey.xyz:7685/">[Demo]</td>
+<td>MonkeyOCR-3B-0709 <a href="http://vlrlabmonkey.xyz:7685/">[Demo]</a></td>
 <td><strong>83.8</strong></td>
 <td>68.8</td>
 <td>74.6</td>
@@ -974,7 +974,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td><strong>75.8 ± 1.0</strong></td>
 </tr>
 <tr>
-<td>MonkeyOCR-1.2B-0709 <a href="http://vlrlabmonkey.xyz:7685/">[https://huggingface.co/echo840/MonkeyOCR-1.2B-0709]</a></td>
+<td>MonkeyOCR-1.2B-0709 <a href="https://huggingface.co/echo840/MonkeyOCR-1.2B-0709">[Weight]</a></td>
 <td>80.5</td>
 <td>62.9</td>
 <td>71.1</td>
