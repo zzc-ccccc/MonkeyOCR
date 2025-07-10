@@ -36,7 +36,7 @@ MonkeyOCR currently does not support photographed documents, but we will continu
 Currently, our model is deployed on a single GPU, so if too many users upload files at the same time, issues like “This application is currently busy” may occur. We're actively working on supporting Ollama and other deployment solutions to ensure a smoother experience for more users. Additionally, please note that the processing time shown on the demo page does not reflect computation time alone—it also includes result uploading and other overhead. During periods of high traffic, this time may be longer. The inference speeds of MonkeyOCR, MinerU, and Qwen2.5 VL-7B were measured on an H800 GPU.
 
 ## News 
-* ```2025.07.09 ``` 🚀 We release [MonkeyOCR-3B-0709](https://huggingface.co/echo840/MonkeyOCR-3B-0709) and [MonkeyOCR-1.2B-0709](https://huggingface.co/echo840/MonkeyOCR-1.2B-0709) with improved performance.
+* ```2025.07.09 ``` 🚀 We release 【MonkeyOCR-1.2B-0709](https://huggingface.co/echo840/MonkeyOCR-1.2B-0709) with improved performance.
 * ```2025.06.12 ``` 🚀 The model’s trending on [Hugging Face](https://huggingface.co/models?sort=trending). Thanks for the love!
 * ```2025.06.05 ``` 🚀 We release [MonkeyOCR](https://huggingface.co/echo840/MonkeyOCR), an English and Chinese documents parsing model.
 
@@ -528,7 +528,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 </tr>
 <tr>
 <td rowspan="4"><strong>Mix</strong></td>
-<td><strong>MonkeyOCR-3B</strong></td>
+<td><strong>MonkeyOCR-3B-0605 <a href="https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/doclayout_yolo_docstructbench_imgsz1280_2501.pt">[Weight]</a></strong></td>
 <td>0.140</td>
 <td>0.297</td>
 <td>0.058</td>
@@ -543,7 +543,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.244</td>
 </tr>
 <tr>
-<td><strong>MonkeyOCR-3B*</strong></td>
+<td><strong>MonkeyOCR-3B*-0605 <a href="https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/layout_zh.pt">[Weight]</a></strong></td>
 <td>0.154</td>
 <td>0.277</td>
 <td>0.073</td>
@@ -558,7 +558,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.183</td>
 </tr>
 <tr>
-<td><strong>MonkeyOCR-3B-0709</strong></td>
+<td><strong>MonkeyOCR-3B-0709 <a href="http://vlrlabmonkey.xyz:7685/">[Demo]</a></strong></td>
 <td><strong>0.138</strong></td>
 <td><strong>0.206</strong></td>
 <td>0.067</td>
@@ -573,7 +573,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.185</td>
 </tr>
 <tr>
-<td><strong>MonkeyOCR-1.2B-0709</strong></td>
+<td><strong>MonkeyOCR-1.2B-0709 <a href="http://vlrlabmonkey.xyz:7685/">[https://huggingface.co/echo840/MonkeyOCR-1.2B-0709]</a></strong></td>
 <td>0.153</td>
 <td>0.223</td>
 <td>0.066</td>
@@ -733,7 +733,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 </tr>
 <tr>
 <td rowspan="4"><strong>Mix</strong></td>
-<td><strong>MonkeyOCR-3B</strong></td>
+<td><strong>MonkeyOCR-3B-0605 <a href="https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/doclayout_yolo_docstructbench_imgsz1280_2501.pt">[Weight]</a></strong></td>
 <td><strong>0.046</strong></td>
 <td>0.120</td>
 <td><strong>0.024</strong></td>
@@ -746,7 +746,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.155</td>
 </tr>
 <tr>
-<td><strong>MonkeyOCR-3B*</strong></td>
+<td><strong>MonkeyOCR-3B*-0605 <a href="https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/layout_zh.pt"></strong></td>
 <td><u>0.054</u></td>
 <td>0.203</td>
 <td>0.038</td>
@@ -759,7 +759,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.120</td>
 </tr>
 <tr>
-<td><strong>MonkeyOCR-3B-0709</strong></td>
+<td><strong>MonkeyOCR-3B-0709 <a href="http://vlrlabmonkey.xyz:7685/">[Demo]</strong></td>
 <td>0.084</td>
 <td>0.129</td>
 <td>0.060</td>
@@ -772,7 +772,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td><strong>0.100</strong></td>
 </tr>
 <tr>
-<td><strong>MonkeyOCR-1.2B-0709</strong></td>
+<td><strong>MonkeyOCR-1.2B-0709 <a href="http://vlrlabmonkey.xyz:7685/">[https://huggingface.co/echo840/MonkeyOCR-1.2B-0709]</a></strong></td>
 <td>0.087</td>
 <td>0.142</td>
 <td>0.059</td>
@@ -962,7 +962,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>75.5 ± 1.0</td>
 </tr>
 <tr>
-<td>MonkeyOCR-3B-0709</td>
+<td>MonkeyOCR-3B-0709 <a href="http://vlrlabmonkey.xyz:7685/">[Demo]</td>
 <td><strong>83.8</strong></td>
 <td>68.8</td>
 <td>74.6</td>
@@ -974,7 +974,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td><strong>75.8 ± 1.0</strong></td>
 </tr>
 <tr>
-<td>MonkeyOCR-1.2B-0709</td>
+<td>MonkeyOCR-1.2B-0709 <a href="http://vlrlabmonkey.xyz:7685/">[https://huggingface.co/echo840/MonkeyOCR-1.2B-0709]</a></td>
 <td>80.5</td>
 <td>62.9</td>
 <td>71.1</td>
