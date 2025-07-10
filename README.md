@@ -528,7 +528,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 </tr>
 <tr>
 <td rowspan="4"><strong>Mix</strong></td>
-<td><strong>MonkeyOCR-3B-0605 <a href="https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/doclayout_yolo_docstructbench_imgsz1280_2501.pt">[Weight]</a></strong></td>
+<td><strong>MonkeyOCR-3B <a href="https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/doclayout_yolo_docstructbench_imgsz1280_2501.pt">[Weight]</a></strong></td>
 <td>0.140</td>
 <td>0.297</td>
 <td>0.058</td>
@@ -543,7 +543,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.244</td>
 </tr>
 <tr>
-<td><strong>MonkeyOCR-3B*-0605 <a href="https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/layout_zh.pt">[Weight]</a></strong></td>
+<td><strong>MonkeyOCR-3B* <a href="https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/layout_zh.pt">[Weight]</a></strong></td>
 <td>0.154</td>
 <td>0.277</td>
 <td>0.073</td>
@@ -733,7 +733,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 </tr>
 <tr>
 <td rowspan="4"><strong>Mix</strong></td>
-<td><strong>MonkeyOCR-3B-0605 <a href="https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/doclayout_yolo_docstructbench_imgsz1280_2501.pt">[Weight]</a></strong></td>
+<td><strong>MonkeyOCR-3B <a href="https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/doclayout_yolo_docstructbench_imgsz1280_2501.pt">[Weight]</a></strong></td>
 <td><strong>0.046</strong></td>
 <td>0.120</td>
 <td><strong>0.024</strong></td>
@@ -746,7 +746,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.155</td>
 </tr>
 <tr>
-<td><strong>MonkeyOCR-3B*-0605 <a href="https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/layout_zh.pt">[Weight]</a></strong></td>
+<td><strong>MonkeyOCR-3B* <a href="https://huggingface.co/echo840/MonkeyOCR/blob/main/Structure/layout_zh.pt">[Weight]</a></strong></td>
 <td><u>0.054</u></td>
 <td>0.203</td>
 <td>0.038</td>
