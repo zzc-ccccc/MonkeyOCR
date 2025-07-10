@@ -992,6 +992,42 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 ### 5. Comparing MonkeyOCR with closed-source and extra large open-source VLMs.
 <img src="https://v1.ax1x.com/2025/07/10/Eq7xQb.png" alt="ominidocbench2" border="0">
 
+## Inference Speed (Pages/s) on Different GPUs and PDF Page Counts
+
+<table>
+    <thead>
+		<tr align='center'>
+    		<th>Model</th>
+        	<th>GPU</th>
+        	<th>50 Pages</th>
+        	<th>100 Pages</th>
+        	<th>300 Pages</th>
+        	<th>500 Pages</th>
+        	<th>1000 Pages</th>
+    	</tr>
+    </thead>
+    <tbody>
+    	<tr align='center'>
+    		<td rowspan='1'>MonkeyOCR-pro-3B</td>
+        	<td>A6000</td>
+        	<td>0.662</td>
+        	<td>0.667</td>
+        	<td>0.697</td>
+        	<td>0.689</td>
+        	<td>0.700</td>
+    	</tr>
+    	<tr align='center'>
+    		<td rowspan='1'>MonkeyOCR-pro-1.2B</td>      
+        	<td>A6000</td>
+        	<td>0.842</td>
+        	<td>0.918</td>
+        	<td>0.989</td>
+        	<td>1.002</td>
+        	<td>0.996</td>
+    	</tr>
+    </tbody>
+</table>
+
 
 ## Visualization Demo
 
