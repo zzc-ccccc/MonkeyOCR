@@ -54,20 +54,20 @@ See detailed results below.
     	<tr align='center'>
     		<td rowspan='1'>MonkeyOCR-pro-3B</td>
         	<td>A6000</td>
-        	<td>0.662</td>
-        	<td>0.667</td>
-        	<td>0.697</td>
-        	<td>0.689</td>
-        	<td>0.700</td>
+        	<td>0.572</td>
+        	<td>0.583</td>
+        	<td>0.605</td>
+        	<td>0.593</td>
+        	<td>0.597</td>
     	</tr>
     	<tr align='center'>
     		<td rowspan='1'>MonkeyOCR-pro-1.2B</td>      
         	<td>A6000</td>
-        	<td>0.842</td>
-        	<td>0.918</td>
-        	<td>0.989</td>
-        	<td>1.002</td>
-        	<td>0.996</td>
+        	<td>0.799</td>
+        	<td>0.790</td>
+        	<td>0.806</td>
+        	<td>0.812</td>
+        	<td>0.807</td>
     	</tr>
     </tbody>
 </table>
