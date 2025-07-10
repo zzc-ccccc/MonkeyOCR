@@ -226,6 +226,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 
 ### 1. The end-to-end evaluation results of different tasks.
 
+```html
 <table>
 <thead>
 <tr>
@@ -234,14 +235,11 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <th colspan="2"><strong>Overall<sup>Edit</sup>↓</strong></th>
 <th colspan="2"><strong>Text<sup>Edit</sup>↓</strong></th>
 <th colspan="2"><strong>Formula<sup>Edit</sup>↓</strong></th>
-<th colspan="2"><strong>Formula<sup>CDM</sup>↑</strong></th>
 <th colspan="2"><strong>Table<sup>TEDS</sup>↑</strong></th>
 <th colspan="2"><strong>Table<sup>Edit</sup>↓</strong></th>
 <th colspan="2"><strong>Read Order<sup>Edit</sup>↓</strong></th>
 </tr>
 <tr>
-<th><em>EN</em></th>
-<th><em>ZH</em></th>
 <th><em>EN</em></th>
 <th><em>ZH</em></th>
 <th><em>EN</em></th>
@@ -266,8 +264,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.215</td>
 <td>0.278</td>
 <td>0.577</td>
-<td>57.3</td>
-<td>42.9</td>
 <td>78.6</td>
 <td>62.1</td>
 <td>0.180</td>
@@ -283,8 +279,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.315</td>
 <td>0.530</td>
 <td>0.883</td>
-<td>17.6</td>
-<td>11.7</td>
 <td>67.6</td>
 <td>49.2</td>
 <td>0.619</td>
@@ -300,8 +294,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.384</td>
 <td>0.306</td>
 <td><strong>0.454</strong></td>
-<td>62.7</td>
-<td>62.1</td>
 <td>77.0</td>
 <td>67.1</td>
 <td>0.243</td>
@@ -317,8 +309,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.987</td>
 <td>0.999</td>
 <td>1</td>
-<td>-</td>
-<td>-</td>
 <td>61.3</td>
 <td>25.0</td>
 <td>0.627</td>
@@ -334,8 +324,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.356</td>
 <td>0.276</td>
 <td>0.611</td>
-<td>78.4</td>
-<td>39.6</td>
 <td>73.6</td>
 <td>66.2</td>
 <td>0.584</td>
@@ -351,8 +339,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.481</td>
 <td>0.999</td>
 <td>1</td>
-<td>-</td>
-<td>-</td>
 <td>0</td>
 <td>0.06</td>
 <td>1</td>
@@ -368,8 +354,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.974</td>
 <td>0.996</td>
 <td>1</td>
-<td>0.11</td>
-<td>0</td>
 <td>64.8</td>
 <td>27.5</td>
 <td>0.284</td>
@@ -387,8 +371,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.535</td>
 <td>-</td>
 <td>-</td>
-<td>-</td>
-<td>-</td>
 <td>0.159</td>
 <td>0.109</td>
 <td><strong>0.069</strong></td>
@@ -403,8 +385,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.315</td>
 <td>0.360</td>
 <td>0.528</td>
-<td>74.3</td>
-<td>45.3</td>
 <td>53.2</td>
 <td>47.2</td>
 <td>0.459</td>
@@ -420,8 +400,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.998</td>
 <td>0.488</td>
 <td>0.941</td>
-<td>15.1</td>
-<td>16.8</td>
 <td>39.9</td>
 <td>0</td>
 <td>0.572</td>
@@ -437,8 +415,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.325</td>
 <td>0.318</td>
 <td>0.495</td>
-<td>64.6</td>
-<td>45.9</td>
 <td>75.8</td>
 <td>63.6</td>
 <td>0.600</td>
@@ -454,12 +430,9 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.293</td>
 <td>0.455</td>
 <td>0.655</td>
-<td>74.3</td>
-<td>43.2</td>
 <td>68.1</td>
 <td>61.3</td>
-<td>0.608</td>
-<td>0.652</td>
+<td>0.608<td>0.652</td>
 <td>0.145</td>
 <td>0.277</td>
 </tr>
@@ -471,8 +444,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.838</td>
 <td>0.753</td>
 <td>0.997</td>
-<td>32.1</td>
-<td>0.55</td>
 <td>44.9</td>
 <td>16.5</td>
 <td>0.729</td>
@@ -488,8 +459,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.197</td>
 <td>0.447</td>
 <td>0.580</td>
-<td>54.7</td>
-<td>40.3</td>
 <td>77.3</td>
 <td>67.2</td>
 <td>0.180</td>
@@ -505,8 +474,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.109</td>
 <td>0.297</td>
 <td>0.536</td>
-<td>64.9</td>
-<td>46.9</td>
 <td><strong>82.5</strong></td>
 <td>79.0</td>
 <td>0.141</td>
@@ -523,8 +490,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.409</td>
 <td>0.425</td>
 <td>0.606</td>
-<td>72.8</td>
-<td>42.8</td>
 <td>72.0</td>
 <td>62.9</td>
 <td>0.234</td>
@@ -540,8 +505,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.228</td>
 <td>0.351</td>
 <td>0.574</td>
-<td>79.0</td>
-<td>50.2</td>
 <td>76.4</td>
 <td>72.2</td>
 <td>0.588</td>
@@ -557,8 +520,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.218</td>
 <td>0.417</td>
 <td>0.563</td>
-<td>78.3</td>
-<td>49.3</td>
 <td>66.1</td>
 <td>73.1</td>
 <td>0.586</td>
@@ -575,8 +536,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.185</td>
 <td>0.238</td>
 <td>0.506</td>
-<td><strong>82.5</strong></td>
-<td>53.5</td>
 <td>80.2</td>
 <td>77.7</td>
 <td>0.170</td>
@@ -592,8 +551,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.134</td>
 <td>0.255</td>
 <td>0.529</td>
-<td>80.3</td>
-<td>50.3</td>
 <td>78.2</td>
 <td>76.2</td>
 <td>0.182</td>
@@ -609,8 +566,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.107</td>
 <td><strong>0.246</strong></td>
 <td><strong>0.421</strong></td>
-<td>65.2</td>
-<td><strong>73.5</strong></td>
 <td>81.5</td>
 <td><strong>87.5</strong></td>
 <td><strong>0.139</strong></td>
@@ -626,8 +581,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.123</td>
 <td>0.272</td>
 <td>0.449</td>
-<td>52.2</td>
-<td>69.2</td>
 <td>76.5</td>
 <td>83.7</td>
 <td>0.176</td>
@@ -637,7 +590,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 </tr>
 </tbody>
 </table>
-
 
 
 ### 2. The end-to-end text recognition performance across 9 PDF page types.
