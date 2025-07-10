@@ -35,8 +35,6 @@ See detailed results below.
 ### Comparing MonkeyOCR with closed-source and extra large open-source VLMs.
 <img src="https://v1.ax1x.com/2025/07/10/EqQEX7.png" alt="ominidocbench2" border="0">
 
-<img src="https://v1.ax1x.com/2025/07/10/EqQNTI.png" alt="ominidocbench1" border="0">
-
 ## Inference Speed (Pages/s) on Different GPUs and [PDF](https://drive.google.com/drive/folders/1geumlJmVY7UUKdr8324sYZ0FHSAElh7m?usp=sharing) Page Counts
 
 <table>
