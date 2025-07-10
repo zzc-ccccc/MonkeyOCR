@@ -226,7 +226,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 
 ### 1. The end-to-end evaluation results of different tasks.
 
-```html
 <table>
 <thead>
 <tr>
