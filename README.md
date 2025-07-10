@@ -35,6 +35,43 @@ MonkeyOCR adopts a Structure-Recognition-Relation (SRR) triplet paradigm, which 
 MonkeyOCR currently does not support photographed documents, but we will continue to improve it in future updates. Stay tuned!
 Currently, our model is deployed on a single GPU, so if too many users upload files at the same time, issues like “This application is currently busy” may occur. Additionally, please note that the processing time shown on the demo page does not reflect computation time alone—it also includes result uploading and other overhead. During periods of high traffic, this time may be longer. The inference speeds of MonkeyOCR, MinerU, and Qwen2.5 VL-7B were measured on an H800 GPU.
 
+## Inference Speed (Pages/s) on Different GPUs and PDF Page Counts
+
+<table>
+    <thead>
+		<tr align='center'>
+    		<th>Model</th>
+        	<th>GPU</th>
+        	<th>50 Pages</th>
+        	<th>100 Pages</th>
+        	<th>300 Pages</th>
+        	<th>500 Pages</th>
+        	<th>1000 Pages</th>
+    	</tr>
+    </thead>
+    <tbody>
+    	<tr align='center'>
+    		<td rowspan='1'>MonkeyOCR-pro-3B</td>
+        	<td>A6000</td>
+        	<td>0.662</td>
+        	<td>0.667</td>
+        	<td>0.697</td>
+        	<td>0.689</td>
+        	<td>0.700</td>
+    	</tr>
+    	<tr align='center'>
+    		<td rowspan='1'>MonkeyOCR-pro-1.2B</td>      
+        	<td>A6000</td>
+        	<td>0.842</td>
+        	<td>0.918</td>
+        	<td>0.989</td>
+        	<td>1.002</td>
+        	<td>0.996</td>
+    	</tr>
+    </tbody>
+</table>
+
+
 ## News 
 * ```2025.07.09 ``` 🚀 We release [MonkeyOCR-pro-1.2B](https://huggingface.co/echo840/MonkeyOCR-pro-1.2B), which achieves better overall performance compared to our previous 3B model.
 * ```2025.06.12 ``` 🚀 The model’s trending on [Hugging Face](https://huggingface.co/models?sort=trending). Thanks for the love!
@@ -991,43 +1028,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 
 ### 5. Comparing MonkeyOCR with closed-source and extra large open-source VLMs.
 <img src="https://v1.ax1x.com/2025/07/10/EqQEX7.png" alt="ominidocbench2" border="0">
-
-## Inference Speed (Pages/s) on Different GPUs and PDF Page Counts
-
-<table>
-    <thead>
-		<tr align='center'>
-    		<th>Model</th>
-        	<th>GPU</th>
-        	<th>50 Pages</th>
-        	<th>100 Pages</th>
-        	<th>300 Pages</th>
-        	<th>500 Pages</th>
-        	<th>1000 Pages</th>
-    	</tr>
-    </thead>
-    <tbody>
-    	<tr align='center'>
-    		<td rowspan='1'>MonkeyOCR-pro-3B</td>
-        	<td>A6000</td>
-        	<td>0.662</td>
-        	<td>0.667</td>
-        	<td>0.697</td>
-        	<td>0.689</td>
-        	<td>0.700</td>
-    	</tr>
-    	<tr align='center'>
-    		<td rowspan='1'>MonkeyOCR-pro-1.2B</td>      
-        	<td>A6000</td>
-        	<td>0.842</td>
-        	<td>0.918</td>
-        	<td>0.989</td>
-        	<td>1.002</td>
-        	<td>0.996</td>
-    	</tr>
-    </tbody>
-</table>
-
 
 ## Visualization Demo
 
