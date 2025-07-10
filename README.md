@@ -26,8 +26,8 @@ MonkeyOCR: Document Parsing with a Structure-Recognition-Relation Triplet Paradi
 ## Introduction
 MonkeyOCR adopts a Structure-Recognition-Relation (SRR) triplet paradigm, which simplifies the multi-tool pipeline of modular approaches while avoiding the inefficiency of using large multimodal models for full-page document processing.
 
-1. Compared with the pipeline-based method MinerU, our approach achieves an average improvement of 5.1% across nine types of Chinese and English documents, including a 15.0% gain on formulas and an 8.6% gain on tables.
-2. Compared to end-to-end models, our 3B-parameter model achieves the best average performance on English documents, outperforming models such as Gemini 2.5 Pro and Qwen2.5 VL-72B.
+1. Compared to the pipeline-based method MinerU, MonkeyOCR-Pro-3B achieves an average improvement of 10.6% across nine types of Chinese and English documents, while MonkeyOCR-Pro-1.2B delivers a 9.4% average improvement.
+2. Compared to end-to-end models, MonkeyOCR-pro-3B achieves the best average performance on English and Chinese documents, outperforming models such as Gemini 2.5 Pro and Qwen2.5 VL-72B. It also outperforms Nanonets OCR by 11.3% on the olmOCR-bench.
 3. For multi-page document parsing, our method reaches a processing speed of 0.84 pages per second, surpassing MinerU (0.65) and Qwen2.5 VL-7B (0.12).
 
 <img src="https://v1.ax1x.com/2025/07/10/Eq75ce.png" alt="ominidocbench1" border="0">
