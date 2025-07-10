@@ -1039,7 +1039,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 
 
 ### 5. Comparing MonkeyOCR with closed-source and extra large open-source VLMs.
-<img src="https://v1.ax1x.com/2025/06/05/7jQlj4.png" alt="7jQlj4.png" border="0" />
+<img src="https://v1.ax1x.com/2025/07/10/Eq7xQb.png" alt="ominidocbench2" border="0">
 
 
 ## Visualization Demo
