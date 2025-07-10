@@ -33,7 +33,7 @@ MonkeyOCR adopts a Structure-Recognition-Relation (SRR) triplet paradigm, which 
 <img src="https://v1.ax1x.com/2025/07/10/EqQNTI.png" alt="ominidocbench1" border="0">
 
 MonkeyOCR currently does not support photographed documents, but we will continue to improve it in future updates. Stay tuned!
-Currently, our model is deployed on a single GPU, so if too many users upload files at the same time, issues like “This application is currently busy” may occur. We're actively working on supporting Ollama and other deployment solutions to ensure a smoother experience for more users. Additionally, please note that the processing time shown on the demo page does not reflect computation time alone—it also includes result uploading and other overhead. During periods of high traffic, this time may be longer. The inference speeds of MonkeyOCR, MinerU, and Qwen2.5 VL-7B were measured on an H800 GPU.
+Currently, our model is deployed on a single GPU, so if too many users upload files at the same time, issues like “This application is currently busy” may occur. Additionally, please note that the processing time shown on the demo page does not reflect computation time alone—it also includes result uploading and other overhead. During periods of high traffic, this time may be longer. The inference speeds of MonkeyOCR, MinerU, and Qwen2.5 VL-7B were measured on an H800 GPU.
 
 ## News 
 * ```2025.07.09 ``` 🚀 We release [MonkeyOCR-pro-1.2B](https://huggingface.co/echo840/MonkeyOCR-pro-1.2B), which achieves better overall performance compared to our previous 3B model.
