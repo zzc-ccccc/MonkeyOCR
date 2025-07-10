@@ -26,9 +26,14 @@ MonkeyOCR: Document Parsing with a Structure-Recognition-Relation Triplet Paradi
 ## Introduction
 MonkeyOCR adopts a Structure-Recognition-Relation (SRR) triplet paradigm, which simplifies the multi-tool pipeline of modular approaches while avoiding the inefficiency of using large multimodal models for full-page document processing.
 
-1. On the OminiDocBench, MonkeyOCR-pro-3B achieves the best overall performance on both English and Chinese documents. Notably, MonkeyOCR-pro-1.2B surpasses MonkeyOCR-3B by 7.4% on Chinese documents.
-2. On the olmOCR-bench, MonkeyOCR-pro-3B achieves the best overall performance, outperforming Nanonets OCR-3B by 11.3%, while MonkeyOCR-pro-1.2B delivers a 7.3% improvement over Nanonets OCR-3B.
-3. MonkeyOCR-pro-1.2B delivers approximately a 39% speed improvement over MonkeyOCR-pro-3B, with only a slight drop in performance.
+1. MonkeyOCR-pro-1.2B surpasses MonkeyOCR-3B by 7.4% on Chinese documents.
+2. MonkeyOCR-pro-1.2B delivers approximately a 39% speed improvement over MonkeyOCR-pro-3B, with only a slight drop in performance.
+3. On OmniDocBench, MonkeyOCR-pro-3B achieves the best overall performance on both English and Chinese documents, outperforming even closed-source and extra-large open-source VLMs such as Gemini 2.0-Flash, Gemini 2.5-Pro, Qwen2.5-VL-72B, GPT-4o, and InternVL3-78B.
+
+See detailed results below.
+
+### Comparing MonkeyOCR with closed-source and extra large open-source VLMs.
+<img src="https://v1.ax1x.com/2025/07/10/EqQEX7.png" alt="ominidocbench2" border="0">
 
 <img src="https://v1.ax1x.com/2025/07/10/EqQNTI.png" alt="ominidocbench1" border="0">
 
@@ -1021,10 +1026,6 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 </tr>
 </tbody>
 </table>
-
-
-### 5. Comparing MonkeyOCR with closed-source and extra large open-source VLMs.
-<img src="https://v1.ax1x.com/2025/07/10/EqQEX7.png" alt="ominidocbench2" border="0">
 
 ## Visualization Demo
 
