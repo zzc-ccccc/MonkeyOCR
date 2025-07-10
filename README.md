@@ -35,7 +35,7 @@ MonkeyOCR adopts a Structure-Recognition-Relation (SRR) triplet paradigm, which 
 MonkeyOCR currently does not support photographed documents, but we will continue to improve it in future updates. Stay tuned!
 Currently, our model is deployed on a single GPU, so if too many users upload files at the same time, issues like “This application is currently busy” may occur. Additionally, please note that the processing time shown on the demo page does not reflect computation time alone—it also includes result uploading and other overhead. During periods of high traffic, this time may be longer. The inference speeds of MonkeyOCR, MinerU, and Qwen2.5 VL-7B were measured on an H800 GPU.
 
-## Inference Speed (Pages/s) on Different GPUs and PDF Page Counts
+## Inference Speed (Pages/s) on Different GPUs and [PDF](https://drive.google.com/drive/folders/1geumlJmVY7UUKdr8324sYZ0FHSAElh7m?usp=sharing) Page Counts
 
 <table>
     <thead>
