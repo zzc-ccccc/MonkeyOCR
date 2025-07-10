@@ -30,7 +30,7 @@ MonkeyOCR adopts a Structure-Recognition-Relation (SRR) triplet paradigm, which 
 2. On the olmOCR-bench, MonkeyOCR-pro-3B achieves the best overall performance, outperforming Nanonets OCR-3B by 11.3%, while MonkeyOCR-pro-1.2B delivers a 7.3% improvement over Nanonets OCR-3B.
 3. For multi-page document parsing, our method reaches a processing speed of 0.84 pages per second, surpassing MinerU (0.65) and Qwen2.5 VL-7B (0.12).
 
-<img src="https://v1.ax1x.com/2025/07/10/Eq75ce.png" alt="ominidocbench1" border="0">
+<img src="https://v1.ax1x.com/2025/07/10/EqQNTI.png" alt="ominidocbench1" border="0">
 
 MonkeyOCR currently does not support photographed documents, but we will continue to improve it in future updates. Stay tuned!
 Currently, our model is deployed on a single GPU, so if too many users upload files at the same time, issues like “This application is currently busy” may occur. We're actively working on supporting Ollama and other deployment solutions to ensure a smoother experience for more users. Additionally, please note that the processing time shown on the demo page does not reflect computation time alone—it also includes result uploading and other overhead. During periods of high traffic, this time may be longer. The inference speeds of MonkeyOCR, MinerU, and Qwen2.5 VL-7B were measured on an H800 GPU.
@@ -990,7 +990,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 
 
 ### 5. Comparing MonkeyOCR with closed-source and extra large open-source VLMs.
-<img src="https://v1.ax1x.com/2025/07/10/Eq7xQb.png" alt="ominidocbench2" border="0">
+<img src="https://v1.ax1x.com/2025/07/10/EqQEX7.png" alt="ominidocbench2" border="0">
 
 ## Inference Speed (Pages/s) on Different GPUs and PDF Page Counts
 
