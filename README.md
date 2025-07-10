@@ -27,8 +27,9 @@ MonkeyOCR: Document Parsing with a Structure-Recognition-Relation Triplet Paradi
 MonkeyOCR adopts a Structure-Recognition-Relation (SRR) triplet paradigm, which simplifies the multi-tool pipeline of modular approaches while avoiding the inefficiency of using large multimodal models for full-page document processing.
 
 1. MonkeyOCR-pro-1.2B surpasses MonkeyOCR-3B by 7.4% on Chinese documents.
-2. MonkeyOCR-pro-1.2B delivers approximately a 39% speed improvement over MonkeyOCR-pro-3B, with only a slight drop in performance.
-3. On OmniDocBench, MonkeyOCR-pro-3B achieves the best overall performance on both English and Chinese documents, outperforming even closed-source and extra-large open-source VLMs such as Gemini 2.0-Flash, Gemini 2.5-Pro, Qwen2.5-VL-72B, GPT-4o, and InternVL3-78B.
+2. MonkeyOCR-pro-1.2B delivers approximately a 39% speed improvement over MonkeyOCR-pro-3B, with approximately 1.6% drop in performance.
+3. On olmOCR-Bench, MonkeyOCR-pro-1.2B outperforms Nanonets-OCR-3B by 7.3%.
+4. On OmniDocBench, MonkeyOCR-pro-3B achieves the best overall performance on both English and Chinese documents, outperforming even closed-source and extra-large open-source VLMs such as Gemini 2.0-Flash, Gemini 2.5-Pro, Qwen2.5-VL-72B, GPT-4o, and InternVL3-78B.
 
 See detailed results below.
 
