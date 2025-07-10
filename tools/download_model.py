@@ -5,7 +5,7 @@ import os
 if __name__ == '__main__':
     parser = ArgumentParser()
     parser.add_argument('--type', '-t', type=str, default="huggingface") #modelscope
-    parser.add_argument('--name', '-n', type=str, default="MonkeyOCR-3B-0709") #modelscope
+    parser.add_argument('--name', '-n', type=str, default="MonkeyOCR-pro-3B") #modelscope
     args = parser.parse_args()
     script_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     model_dir = os.path.join(script_dir, "model_weight")
