@@ -409,7 +409,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>-</td>
 <td>-</td>
 <td>0.159</td>
-<td>0.109</td>
+<td><strong>0.109</strong></td>
 <td><strong>0.069</strong></td>
 <td><strong>0.091</strong></td>
 </tr>
@@ -606,7 +606,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>81.5</td>
 <td><strong>87.5</strong></td>
 <td><strong>0.139</strong></td>
-<td><strong>0.111</strong></td>
+<td>0.111</td>
 <td>0.100</td>
 <td>0.185</td>
 </tr>
