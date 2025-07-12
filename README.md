@@ -52,22 +52,54 @@ See detailed results below.
     </thead>
     <tbody>
     	<tr align='center'>
-    		<td rowspan='1'>MonkeyOCR-pro-3B</td>
-        	<td>A6000</td>
-        	<td>0.572</td>
-        	<td>0.583</td>
-        	<td>0.605</td>
-        	<td>0.593</td>
-        	<td>0.597</td>
+    		<td rowspan='3'>MonkeyOCR-3B</td>
+        	<td>3090</td>
+        	<td>0.492</td>
+        	<td>0.484</td>
+        	<td>0.497</td>
+        	<td>0.492</td>
+        	<td>0.496</td>
     	</tr>
     	<tr align='center'>
-    		<td rowspan='1'>MonkeyOCR-pro-1.2B</td>      
         	<td>A6000</td>
-        	<td>0.799</td>
-        	<td>0.790</td>
-        	<td>0.806</td>
-        	<td>0.812</td>
-        	<td>0.807</td>
+        	<td>0.585</td>
+        	<td>0.587</td>
+        	<td>0.609</td>
+        	<td>0.598</td>
+        	<td>0.608</td>
+    	</tr>
+    	<tr align='center'>
+        	<td>4090</td>
+        	<td>0.972</td>
+        	<td>0.969</td>
+        	<td>1.006</td>
+        	<td>0.986</td>
+        	<td>1.006</td>
+    	</tr>
+    	<tr align='center'>
+    		<td rowspan='3'>MonkeyOCR-1.2B</td>
+        	<td>3090</td>
+        	<td>0.615</td>
+        	<td>0.660</td>
+        	<td>0.677</td>
+        	<td>0.687</td>
+        	<td>0.683</td>
+    	</tr>
+    	<tr align='center'>
+        	<td>A6000</td>
+        	<td>0.709</td>
+        	<td>0.786</td>
+        	<td>0.825</td>
+        	<td>0.829</td>
+        	<td>0.825</td>
+   		</tr>
+    	<tr align='center'>
+        	<td>4090</td>
+        	<td>1.194</td>
+        	<td>1.314</td>
+        	<td>1.436</td>
+        	<td>1.442</td>
+        	<td>1.434</td>
     	</tr>
     </tbody>
 </table>
