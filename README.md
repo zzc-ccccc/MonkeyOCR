@@ -104,6 +104,73 @@ See detailed results below.
     </tbody>
 </table>
 
+## VLM OCR Speed (Pages/s) on Different GPUs and [PDF](https://drive.google.com/drive/folders/1geumlJmVY7UUKdr8324sYZ0FHSAElh7m?usp=sharing) Page Counts
+
+<table>
+    <thead>
+		<tr align='center'>
+    		<th>Model</th>
+        	<th>GPU</th>
+        	<th>50 Pages</th>
+        	<th>100 Pages</th>
+        	<th>300 Pages</th>
+        	<th>500 Pages</th>
+        	<th>1000 Pages</th>
+    	</tr>
+    </thead>
+    <tbody>
+    	<tr align='center'>
+    		<td rowspan='3'>MonkeyOCR-pro-3B</td>
+        	<td>3090</td>
+        	<td>0.705</td>
+        	<td>0.680</td>
+        	<td>0.711</td>
+        	<td>0.700</td>
+        	<td>0.724</td>
+    	</tr>
+    	<tr align='center'>
+        	<td>A6000</td>
+        	<td>0.885</td>
+        	<td>0.860</td>
+        	<td>0.915</td>
+        	<td>0.892</td>
+        	<td>0.934</td>
+    	</tr>
+    	<tr align='center'>
+        	<td>4090</td>
+        	<td>1.321</td>
+        	<td>1.300</td>
+        	<td>1.384</td>
+        	<td>1.343</td>
+        	<td>1.410</td>
+    	</tr>
+    	<tr align='center'>
+    		<td rowspan='3'>MonkeyOCR-pro-1.2B</td>
+        	<td>3090</td>
+        	<td>0.919</td>
+        	<td>1.086</td>
+        	<td>1.166</td>
+        	<td>1.182</td>
+        	<td>1.199</td>
+    	</tr>
+    	<tr align='center'>
+        	<td>A6000</td>
+        	<td>1.177</td>
+        	<td>1.361</td>
+        	<td>1.506</td>
+        	<td>1.525</td>
+        	<td>1.569</td>
+   		</tr>
+    	<tr align='center'>
+        	<td>4090</td>
+        	<td>1.759</td>
+        	<td>1.987</td>
+        	<td>2.260</td>
+        	<td>2.345</td>
+        	<td>2.415</td>
+    	</tr>
+    </tbody>
+</table>
 
 ## News 
 * ```2025.07.10 ``` 🚀 We release [MonkeyOCR-pro-1.2B](https://huggingface.co/echo840/MonkeyOCR-pro-1.2B), — a leaner and faster version model that outperforms our previous 3B version in accuracy, speed, and efficiency.
