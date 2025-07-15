@@ -85,7 +85,7 @@ See detailed results below.
         	<td>1.006</td>
     	</tr>
     	<tr align='center'>
-    		<td rowspan='3'>MonkeyOCR-pro-1.2B</td>
+    		<td rowspan='4'>MonkeyOCR-pro-1.2B</td>
         	<td>3090</td>
         	<td>0.615</td>
         	<td>0.660</td>
@@ -136,7 +136,7 @@ See detailed results below.
     </thead>
     <tbody>
     	<tr align='center'>
-    		<td rowspan='3'>MonkeyOCR-pro-3B</td>
+    		<td rowspan='4'>MonkeyOCR-pro-3B</td>
         	<td>3090</td>
         	<td>0.705</td>
         	<td>0.680</td>
@@ -169,7 +169,7 @@ See detailed results below.
         	<td>1.410</td>
     	</tr>
     	<tr align='center'>
-    		<td rowspan='3'>MonkeyOCR-pro-1.2B</td>
+    		<td rowspan='4'>MonkeyOCR-pro-1.2B</td>
         	<td>3090</td>
         	<td>0.919</td>
         	<td>1.086</td>
