@@ -513,7 +513,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td><strong>0.091</strong></td>
 </tr>
 <tr>
-<td rowspan="7"><strong>Expert<br>VLMs</strong></td>
+<td rowspan="8"><strong>Expert<br>VLMs</strong></td>
 <td>GOT-OCR</td>
 <td>0.287</td>
 <td>0.411</td>
@@ -616,6 +616,24 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.195</td>
 <td><strong>0.069</strong></td>
 <td>0.118</td>
+</tr>
+<tr>
+<td>OCRFlux</td>
+	
+<td>0.195</td>
+<td>0.281</td>
+<td>0.064</td>
+<td>0.183</td>
+<td>0.379</td>
+<td>0.613</td>
+<td>71.6</td>
+<td>81.3</td>
+<td>0.253</td>
+<td>0.139</td>
+<td>0.086</td>
+<td>0.187</td>
+
+
 </tr>
 <tr>
 <td rowspan="3"><strong>General<br>VLMs</strong></td>
@@ -827,6 +845,19 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.363</td>
 <td>0.307</td>
 <td>0.177</td>
+</tr>
+<tr>
+<td>OCRFlux</td>
+<td>0.068</td>
+<td>0.125</td>
+<td>0.092</td>
+<td>0.102</td>
+<td>0.119</td>
+<td>0.083</td>
+<td>0.047</td>
+<td>0.223</td>
+<td>0.536</td>
+<td>0.149</td>
 </tr>
 <tr>
 <td rowspan="3"><strong>General<br>VLMs</strong></td>
