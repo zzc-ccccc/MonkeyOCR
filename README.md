@@ -52,7 +52,7 @@ See detailed results below.
     </thead>
     <tbody>
     	<tr align='center'>
-    		<td rowspan='3'>MonkeyOCR-pro-3B</td>
+    		<td rowspan='4'>MonkeyOCR-pro-3B</td>
         	<td>3090</td>
         	<td>0.492</td>
         	<td>0.484</td>
@@ -67,6 +67,14 @@ See detailed results below.
         	<td>0.609</td>
         	<td>0.598</td>
         	<td>0.608</td>
+    	</tr>
+    	<tr align='center'>
+        	<td>H800</td>
+        	<td>0.923</td>
+        	<td>0.768</td>
+        	<td>0.897</td>
+        	<td>0.930</td>
+        	<td>0.891</td>
     	</tr>
     	<tr align='center'>
         	<td>4090</td>
@@ -93,6 +101,14 @@ See detailed results below.
         	<td>0.829</td>
         	<td>0.825</td>
    		</tr>
+    	<tr align='center'>
+        	<td>H800</td>
+        	<td>0.965</td>
+        	<td>1.082</td>
+        	<td>1.101</td>
+        	<td>1.145</td>
+        	<td>1.015</td>
+    	</tr>
     	<tr align='center'>
         	<td>4090</td>
         	<td>1.194</td>
@@ -137,6 +153,14 @@ See detailed results below.
         	<td>0.934</td>
     	</tr>
     	<tr align='center'>
+        	<td>H800</td>
+        	<td>1.371</td>
+        	<td>1.135</td>
+        	<td>1.339</td>
+        	<td>1.433</td>
+        	<td>1.509</td>
+    	</tr>
+    	<tr align='center'>
         	<td>4090</td>
         	<td>1.321</td>
         	<td>1.300</td>
@@ -161,6 +185,14 @@ See detailed results below.
         	<td>1.525</td>
         	<td>1.569</td>
    		</tr>
+    	<tr align='center'>
+        	<td>H800</td>
+        	<td>1.466</td>
+        	<td>1.719</td>
+        	<td>1.763</td>
+        	<td>1.875</td>
+        	<td>1.650</td>
+    	</tr>
     	<tr align='center'>
         	<td>4090</td>
         	<td>1.759</td>
