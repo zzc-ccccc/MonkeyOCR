@@ -34,7 +34,7 @@ MonkeyOCR adopts a Structure-Recognition-Relation (SRR) triplet paradigm, which 
 See detailed results below.
 
 ### Comparing MonkeyOCR with closed-source and extra large open-source VLMs.
-<a href="https://zimgs.com/i/EqHZU6"><img src="https://v1.ax1x.com/2025/07/10/EqHZU6.png" alt="EqHZU6.png" border="0" /></a>
+<a href="https://zimgs.com/i/EKhkhY"><img src="https://v1.ax1x.com/2025/07/15/EKhkhY.png" alt="EKhkhY.png" border="0" /></a>
 
 ## Inference Speed (Pages/s) on Different GPUs and [PDF](https://drive.google.com/drive/folders/1geumlJmVY7UUKdr8324sYZ0FHSAElh7m?usp=sharing) Page Counts
 
