@@ -807,7 +807,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.300</td>
 </tr>
 <tr>
-<td rowspan="3"><strong>Expert<br>VLMs</strong></td>
+<td rowspan="4"><strong>Expert<br>VLMs</strong></td>
 <td>GOT-OCR</td>
 <td>0.111</td>
 <td>0.222</td>
