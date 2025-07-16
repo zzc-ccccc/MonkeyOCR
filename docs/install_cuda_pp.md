@@ -1,13 +1,12 @@
 # Install with CUDA Support
 
-This guide walks you through setting up the environment for **MonkeyOCR** with CUDA support. You can choose **one** of the backends — [**LMDeploy**](https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/docs/install_cuda.md#using-lmdeploy-as-the-inference-backend-optional)(recomended), [**vLLM**](https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/docs/install_cuda.md#using-vllm-as-the-inference-backend-optional), or [**transformers**](https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/docs/install_cuda.md#using-transformers-as-the-inference-backend-optional) — to install and use. It covers installation instructions for each of them.
+This guide walks you through setting up the environment for **MonkeyOCR** with CUDA support. You can choose **one** of the backends — **LMDeploy** (recomend), **vLLM**, or **transformers** — to install and use. It covers installation instructions for each of them.
 
-> **Note:** Based on our internal test, inference speed ranking is: **LMDeploy ≥ vLLM >>> transformers**
+## Step 1. Install PaddleX
+To use `PP-DocLayout_plus-L`, you must install two additional core libraries, **PaddlePaddle** and **PaddleX**.
 
-## Step 1. Install Inference Backend
+Make sure your pytorch version is compatible with the PaddlePaddle version you are installing, referring to the official **[PaddleX](https://github.com/PaddlePaddle/PaddleX)**
 
-### Using **LMDeploy** as the Inference Backend (Optional)
-> **Supporting CUDA 12.6/11.8**
 ```bash
 conda create -n MonkeyOCR python=3.10
 conda activate MonkeyOCR
@@ -15,10 +14,23 @@ conda activate MonkeyOCR
 git clone https://github.com/Yuliang-Liu/MonkeyOCR.git
 cd MonkeyOCR
 
-
 export CUDA_VERSION=126 # for CUDA 12.6
 # export CUDA_VERSION=118 # for CUDA 11.8
 
+pip install paddlepaddle-gpu==3.0.0 -i https://www.paddlepaddle.org.cn/packages/stable/cu${CUDA_VERSION}/
+
+# Execute the following command to install the base version of PaddleX.
+pip install "paddlex[base]"
+```
+
+## Step 2. Install Inference Backend
+
+> **Note:** Based on our internal test, inference speed ranking is: **[LMDeploy](https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/docs/install_cuda.md#using-lmdeploy-as-the-inference-backend-optional) ≥ [vLLM](https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/docs/install_cuda.md#using-vllm-as-the-inference-backend-optional) >>> [transformers](https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/docs/install_cuda.md#using-transformers-as-the-inference-backend-optional)**
+
+### Using **LMDeploy** as the Inference Backend (Recommend)
+> **Supporting CUDA 12.6/11.8**
+
+```bash
 # Install PyTorch. Refer to https://pytorch.org/get-started/previous-versions/ for version compatibility
 pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu${CUDA_VERSION}
 
@@ -59,16 +71,10 @@ pip install lmdeploy==0.8.0
 
 ### Using **vLLM** as the Inference Backend (Optional)
 > **Supporting CUDA 12.6/11.8**
+
 ```bash
-conda create -n MonkeyOCR python=3.10
-conda activate MonkeyOCR
-
-git clone https://github.com/Yuliang-Liu/MonkeyOCR.git
-cd MonkeyOCR
-
 pip install uv --upgrade
-export CUDA_VERSION=126 # for CUDA 12.6
-# export CUDA_VERSION=118 # for CUDA 11.8
+
 uv pip install vllm==0.9.1 --torch-backend=cu${CUDA_VERSION}
 
 pip install -e .
@@ -85,27 +91,14 @@ chat_config:
 
 ### Using **transformers** as the Inference Backend (Optional)
 > **Supporting CUDA 12.6**
-```bash
-conda create -n MonkeyOCR python=3.10
-conda activate MonkeyOCR
 
-git clone https://github.com/Yuliang-Liu/MonkeyOCR.git
-cd MonkeyOCR
+Install PyTorch and Flash Attention 2:
+```bash
+# Install PyTorch. Refer to https://pytorch.org/get-started/previous-versions/ for version compatibility
+pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu126
 
 pip install -e .
-```
 
-Install PyTorch according to your CUDA version:
-
-```bash
-
-# Install pytorch
-pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu126
-```
-
-Install Flash Attention 2:
-
-```bash
 pip install flash-attn==2.7.4.post1 --no-build-isolation
 ```
 Then, update the `chat_config` in your `model_configs.yaml` config file:
@@ -115,17 +108,4 @@ chat_config:
   batch_size: 10  # Adjust based on your available GPU memory
 ```
 
-## Step 2. Install PaddleX
-To use `PP-DocLayout_plus-L`, you must install two additional core libraries, **PaddlePaddle** and **PaddleX**.
 
-Make sure your pytorch version is compatible with the PaddlePaddle version you are installing, referring to the official **[PaddleX](https://github.com/PaddlePaddle/PaddleX)**
-
-```bash
-export CUDA_VERSION=126 # for CUDA 12.6
-# export CUDA_VERSION=118 # for CUDA 11.8
-
-pip install paddlepaddle-gpu==3.0.0 -i https://www.paddlepaddle.org.cn/packages/stable/cu${CUDA_VERSION}/
-
-# Execute the following command to install the base version of PaddleX.
-pip install "paddlex[base]"
-```
