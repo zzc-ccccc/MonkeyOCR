@@ -17,7 +17,7 @@ cd MonkeyOCR
 export CUDA_VERSION=126 # for CUDA 12.6
 # export CUDA_VERSION=118 # for CUDA 11.8
 
-pip install paddlepaddle-gpu==3.0.0 -f https://www.paddlepaddle.org.cn/packages/stable/cu${CUDA_VERSION}/
+pip install paddlepaddle-gpu==3.0.0 -i https://www.paddlepaddle.org.cn/packages/stable/cu${CUDA_VERSION}/
 
 # Execute the following command to install the base version of PaddleX.
 pip install "paddlex[base]"
