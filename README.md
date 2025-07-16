@@ -969,7 +969,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 </tbody>
 </table>
 
-### 4. The evaluation results of olmOCR-bench.
+### 3. The evaluation results of olmOCR-bench.
 
 <table>
 <thead>
