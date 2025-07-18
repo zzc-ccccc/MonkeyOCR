@@ -11,7 +11,7 @@ if __name__ == '__main__':
     model_dir = os.path.join(script_dir, "model_weight")
     if not os.path.exists(model_dir):
         os.makedirs(model_dir)
-    pp_dir = os.path.join(model_dir, "PP-DocLayout_plus-L")
+    pp_dir = os.path.join(model_dir, "Structure/PP-DocLayout_plus-L")
     if not os.path.exists(pp_dir):
         os.makedirs(pp_dir)
     if args.type == "huggingface":
