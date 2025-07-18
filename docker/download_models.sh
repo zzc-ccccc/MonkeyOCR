@@ -32,7 +32,6 @@ check_models_exist() {
         "Recognition/model-00002-of-00002.safetensors"
         "Relation/model.safetensors"
         "Structure/PP-DocLayout_plus-L/inference.pdiparams"
-        ""
     )
 
     for model_file in "${model_files[@]}"; do
