@@ -206,7 +206,7 @@ See detailed results below.
 
 
 ## Supported Hardware
-Due to the limited types of GPUs available to us, we may not be able to provide highly accurate hardware specifications. We've tested the model on GPUs such as the 3090, 4090, A6000, H800, A100, and even the 4060 with 8GB of VRAM (suitable for deploying quantized 3B models and 1.2B model). We are very grateful for the feedback and contributions from the open-source community, who have also successfully run the model on [50-series GPUs](https://github.com/Yuliang-Liu/MonkeyOCR/issues/90), [H200](https://github.com/Yuliang-Liu/MonkeyOCR/issues/151), [L20](https://github.com/Yuliang-Liu/MonkeyOCR/issues/133), [V100](https://github.com/Yuliang-Liu/MonkeyOCR/issues/144)  and the  [2080 Ti](https://github.com/Yuliang-Liu/MonkeyOCR/pull/1).
+Due to the limited types of GPUs available to us, we may not be able to provide highly accurate hardware specifications. We've tested the model on GPUs such as the 3090, 4090, A6000, H800, A100, and even the 4060 with 8GB of VRAM (suitable for deploying quantized 3B model and 1.2B model). We are very grateful for the feedback and contributions from the open-source community, who have also successfully run the model on [50-series GPUs](https://github.com/Yuliang-Liu/MonkeyOCR/issues/90), [H200](https://github.com/Yuliang-Liu/MonkeyOCR/issues/151), [L20](https://github.com/Yuliang-Liu/MonkeyOCR/issues/133), [V100](https://github.com/Yuliang-Liu/MonkeyOCR/issues/144)  and the  [2080 Ti](https://github.com/Yuliang-Liu/MonkeyOCR/pull/1).
 
 
 ## News 
