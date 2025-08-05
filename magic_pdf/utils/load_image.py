@@ -7,7 +7,7 @@ from typing import Union
 
 import requests
 import fitz
-from pathlib import Path
+from typing import List
 from PIL import Image, ImageFile
 from loguru import logger
 
