@@ -517,7 +517,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.641</td>
 </tr>
 <tr>
-<td>PPStruct-V3</td>
+<td>PP-StructureV3</td>
 <td>0.145</td>
 <td><strong>0.206</strong></td>
 <td>0.058</td>
