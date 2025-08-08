@@ -165,7 +165,7 @@ class BatchAnalyzeLLM:
             return output.replace('$$', '').strip('$').strip()
         def sanitize_html(output):
             output = output.replace('```html','').replace('```','').replace('<html>','').replace('</html>','').strip()
-            if not output.endwith('</table>'):
+            if not output.endswith('</table>'):
                 output += '</table>'
             return output.strip()
         assert len(images) == len(cat_ids)
