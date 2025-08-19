@@ -692,7 +692,7 @@ class MonkeyChat_LMDeploy_queue:
         
         try:
             # Wait for result with timeout
-            result = await asyncio.wait_for(future, timeout=300)
+            result = await asyncio.wait_for(future)
             return result
         except asyncio.TimeoutError:
             logger.error(f"Request {request_id} timed out")
@@ -736,7 +736,7 @@ class MonkeyChat_LMDeploy_queue:
                 
                 with concurrent.futures.ThreadPoolExecutor() as executor:
                     future = executor.submit(run_async_in_thread)
-                    return future.result(timeout=300)
+                    return future.result()
                     
             except RuntimeError:
                 # No running event loop
@@ -791,7 +791,7 @@ class MonkeyChat_LMDeploy_queue:
                 
                 with concurrent.futures.ThreadPoolExecutor() as executor:
                     future = executor.submit(run_async_in_thread)
-                    return future.result(timeout=600)
+                    return future.result()
                     
             except RuntimeError:
                 # No running event loop
@@ -1058,7 +1058,7 @@ class MonkeyChat_vLLM_queue:
         
         try:
             # Wait for result with timeout
-            result = await asyncio.wait_for(future, timeout=300)
+            result = await asyncio.wait_for(future)
             return result
         except asyncio.TimeoutError:
             logger.error(f"Request {request_id} timed out")
@@ -1102,7 +1102,7 @@ class MonkeyChat_vLLM_queue:
                 
                 with concurrent.futures.ThreadPoolExecutor() as executor:
                     future = executor.submit(run_async_in_thread)
-                    return future.result(timeout=300)
+                    return future.result()
                     
             except RuntimeError:
                 # No running event loop
@@ -1157,7 +1157,7 @@ class MonkeyChat_vLLM_queue:
                 
                 with concurrent.futures.ThreadPoolExecutor() as executor:
                     future = executor.submit(run_async_in_thread)
-                    return future.result(timeout=600)
+                    return future.result()
                     
             except RuntimeError:
                 # No running event loop
