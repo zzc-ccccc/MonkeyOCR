@@ -692,7 +692,7 @@ class MonkeyChat_LMDeploy_queue:
         
         try:
             # Wait for result with timeout
-            result = await asyncio.wait_for(future)
+            result = await future
             return result
         except asyncio.TimeoutError:
             logger.error(f"Request {request_id} timed out")
@@ -1058,7 +1058,7 @@ class MonkeyChat_vLLM_queue:
         
         try:
             # Wait for result with timeout
-            result = await asyncio.wait_for(future)
+            result = future
             return result
         except asyncio.TimeoutError:
             logger.error(f"Request {request_id} timed out")
