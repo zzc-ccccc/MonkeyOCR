@@ -44,7 +44,7 @@ class MonkeyOCR:
         if not os.path.exists(models_dir):
             raise FileNotFoundError(
                 f"Model directory '{models_dir}' not found. "
-                "Please run 'python download_model.py' to download the required models."
+                "Please run 'python tools/download_model.py' to download the required models."
             )
         
         self.layout_config = self.configs.get('layout_config')
@@ -58,7 +58,7 @@ class MonkeyOCR:
             if not os.path.exists(layout_model_path):
                 raise FileNotFoundError(
                     f"Layout model file not found at '{layout_model_path}'. "
-                    "Please run 'python download_model.py' to download the required models."
+                    "Please run 'python tools/download_model.py' to download the required models."
                 )
             self.layout_model = atom_model_manager.get_atom_model(
                 atom_model_name=AtomicModel.Layout,
@@ -73,7 +73,7 @@ class MonkeyOCR:
                 if not os.path.exists(layout_model_path):
                     raise FileNotFoundError(
                         f"Layout model file not found at '{layout_model_path}'. "
-                        "Please run 'python download_model.py' to download the required models."
+                        "Please run 'python tools/download_model.py' to download the required models."
                     )
             self.layout_model = atom_model_manager.get_atom_model(
                 atom_model_name=AtomicModel.Layout,
@@ -95,7 +95,7 @@ class MonkeyOCR:
             else:
                 raise FileNotFoundError(
                     f"Reading Order model file not found at '{layoutreader_model_dir}'. "
-                    "Please run 'python download_model.py' to download the required models."
+                    "Please run 'python tools/download_model.py' to download the required models."
                 )
 
             if bf16_supported:
@@ -115,7 +115,7 @@ class MonkeyOCR:
             if not os.path.exists(chat_path):
                 raise FileNotFoundError(
                     f"Chat model file not found at '{chat_path}'. "
-                    "Please run 'python download_model.py' to download the required models."
+                    "Please run 'python tools/download_model.py' to download the required models."
                 )
         if chat_backend == 'lmdeploy':
             logger.info('Use LMDeploy as backend')
@@ -153,7 +153,7 @@ class MonkeyOCR:
 class MonkeyChat_LMDeploy:
     def __init__(self, model_path, engine_config=None): 
         try:
-            from lmdeploy import pipeline, GenerationConfig, PytorchEngineConfig, ChatTemplateConfig
+            from lmdeploy import pipeline, GenerationConfig, PytorchEngineConfig, ChatTemplateConfig, TurbomindEngineConfig
         except ImportError:
             raise ImportError("LMDeploy is not installed. Please install it following: "
                               "https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/docs/install_cuda.md "
@@ -163,9 +163,9 @@ class MonkeyChat_LMDeploy:
         self.pipe = pipeline(model_path, backend_config=self.engine_config, chat_template_config=ChatTemplateConfig('qwen2d5-vl'))
         self.gen_config=GenerationConfig(max_new_tokens=4096,do_sample=True,temperature=0,repetition_penalty=1.05)
 
-    def _auto_config_dtype(self, engine_config=None, PytorchEngineConfig=None):
+    def _auto_config_dtype(self, engine_config=None, EngineConfig=None):
         if engine_config is None:
-            engine_config = PytorchEngineConfig(session_len=10240)
+            engine_config = EngineConfig(session_len=10240)
         dtype = "bfloat16"
         if torch.cuda.is_available():
             device = torch.cuda.current_device()
