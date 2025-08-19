@@ -43,7 +43,7 @@ class PipeResultLLM:
         md_content = union_make(
             pdf_info_list, md_make_mode, drop_mode, img_dir_or_bucket_prefix
         )
-        return md_content.replace('\$', '$').replace('\*', '*').replace('<seg>', '\<seg\>').replace('<sos', '\<sos\>').replace('<eos>', '\<eos\>').replace('<pad>', '\<pad\>').replace('<unk>', '\<unk\>').replace('<sep>', '\<sep\>').replace('<cls>', '\<cls\>')
+        return md_content.replace('\\$', '$').replace('\\*', '*').replace('<seg>', r'\<seg\>').replace('<sos>', r'\<sos\>').replace('<eos>', r'\<eos\>').replace('<pad>', r'\<pad\>').replace('<unk>', r'\<unk\>').replace('<sep>', r'\<sep\>').replace('<cls>', r'\<cls\>')
 
     def dump_md(
         self,
