@@ -224,14 +224,14 @@ Download our model from Huggingface.
 ```python
 pip install huggingface_hub
 
-python tools/download_model.py -n MonkeyOCR-pro-1.2B  # or MonkeyOCR
+python tools/download_model.py -n MonkeyOCR-pro-3B  # or MonkeyOCR
 ```
 You can also download our model from ModelScope.
 
 ```python
 pip install modelscope
 
-python tools/download_model.py -t modelscope -n MonkeyOCR-pro-1.2B  # or MonkeyOCR
+python tools/download_model.py -t modelscope -n MonkeyOCR-pro-3B  # or MonkeyOCR
 ```
 ### 3. Inference
 You can parse a file or a directory containing PDFs or images using the following commands:
@@ -733,7 +733,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.183</td>
 </tr>
 <tr>
-<td><strong>MonkeyOCR-pro-3B <a href="http://vlrlabmonkey.xyz:7685/">[Demo]</a></strong></td>
+<td><strong>MonkeyOCR-pro-3B <a href="https://huggingface.co/echo840/MonkeyOCR-pro-3B">[Weight</a></strong></td>
 <td><strong>0.138</strong></td>
 <td><strong>0.206</strong></td>
 <td>0.067</td>
@@ -947,7 +947,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.120</td>
 </tr>
 <tr>
-<td><strong>MonkeyOCR-pro-3B <a href="http://vlrlabmonkey.xyz:7685/">[Demo]</a></strong></td>
+<td><strong>MonkeyOCR-pro-3B <a href="https://huggingface.co/echo840/MonkeyOCR-pro-3B">[Weight]</a></strong></td>
 <td>0.084</td>
 <td>0.129</td>
 <td>0.060</td>
@@ -1150,7 +1150,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>75.5 ± 1.0</td>
 </tr>
 <tr>
-<td>MonkeyOCR-pro-3B <a href="http://vlrlabmonkey.xyz:7685/">[Demo]</a></td>
+<td>MonkeyOCR-pro-3B <a href="https://huggingface.co/echo840/MonkeyOCR-pro-3B">[Weight]</a></td>
 <td><strong>83.8</strong></td>
 <td>68.8</td>
 <td>74.6</td>
