@@ -1057,8 +1057,8 @@ class MonkeyChat_vLLM_queue:
             self.result_futures[request_id] = future
         
         try:
-            # Wait for result with timeout
-            result = future
+            # Wait for result without timeout
+            result = await future
             return result
         except asyncio.TimeoutError:
             logger.error(f"Request {request_id} timed out")
