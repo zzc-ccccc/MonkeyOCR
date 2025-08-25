@@ -733,7 +733,7 @@ Here are the evaluation results of our model on OmniDocBench. MonkeyOCR-3B uses 
 <td>0.183</td>
 </tr>
 <tr>
-<td><strong>MonkeyOCR-pro-3B <a href="https://huggingface.co/echo840/MonkeyOCR-pro-3B">[Weight</a></strong></td>
+<td><strong>MonkeyOCR-pro-3B <a href="https://huggingface.co/echo840/MonkeyOCR-pro-3B">[Weight]</a></strong></td>
 <td><strong>0.138</strong></td>
 <td><strong>0.206</strong></td>
 <td>0.067</td>
