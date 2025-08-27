@@ -37,9 +37,9 @@ pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https
 pip install -e .
 
 # CUDA 12.6
-pip install lmdeploy==0.8.0
+pip install lmdeploy==0.9.2
 # CUDA 11.8
-# pip install https://github.com/InternLM/lmdeploy/releases/download/v0.8.0/lmdeploy-0.8.0+cu118-cp310-cp310-manylinux2014_x86_64.whl --extra-index-url https://download.pytorch.org/whl/cu118
+# pip install https://github.com/InternLM/lmdeploy/releases/download/v0.9.2/lmdeploy-0.9.2+cu118-cp310-cp310-manylinux2014_x86_64.whl --extra-index-url https://download.pytorch.org/whl/cu118
 ```
 
 > [!IMPORTANT]

@@ -32,7 +32,7 @@ WORKDIR /app/MonkeyOCR
 RUN pip install -e .
 
 # Install inference backend dependencies
-RUN pip install lmdeploy==0.8.0
+RUN pip install lmdeploy==0.9.2
 
 # Install model download related dependencies
 RUN pip install modelscope huggingface_hub
