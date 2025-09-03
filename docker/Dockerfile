@@ -42,8 +42,8 @@ RUN pip install paddlepaddle-gpu==3.0.0 -i https://www.paddlepaddle.org.cn/packa
 RUN pip install "paddlex[base]"
 
 # Copy model download scripts
-COPY --chown=appuser:appuser docker/download_models.sh /app/MonkeyOCR/
-COPY --chown=appuser:appuser docker/entrypoint.sh /app/MonkeyOCR/
+COPY --chown=appuser:appuser download_models.sh /app/MonkeyOCR/
+COPY --chown=appuser:appuser entrypoint.sh /app/MonkeyOCR/
 RUN chmod +x /app/MonkeyOCR/download_models.sh /app/MonkeyOCR/entrypoint.sh
 
 # Create model directory
